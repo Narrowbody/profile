@@ -2,7 +2,7 @@
 title: Safety Strategy Development
 description: A Safety Strategy is an organization's plan to prioritize, manage, and enhance safety across its operations and achieve specific safety goals.
 date: 2023-09-12T08:18:30.663Z
-preview: ''
+preview: '/assets/stock-1.jpg'
 draft: true
 tags:
   - Airlines

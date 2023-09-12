@@ -7,31 +7,80 @@
       "previewPath": null,
       "fields": [
         {
-          "title": "Title",
-          "name": "title",
+          "title": "company",
+          "name": "company",
           "type": "string"
         },
         {
-          "title": "Description",
-          "name": "description",
+          "title": "location",
+          "name": "location",
           "type": "string"
         },
         {
-          "title": "Publishing date",
-          "name": "date",
+          "title": "fromDate",
+          "name": "fromDate",
+          "type": "datetime"
+        },
+        {
+          "title": "toDate",
+          "name": "toDate",
+          "type": "datetime"
+        },
+        {
+          "title": "tags",
+          "name": "tags",
+          "type": "tags"
+        },
+        {
+          "title": "categories",
+          "name": "categories",
+          "type": "categories"
+        },
+        {
+          "title": "logo",
+          "name": "logo",
+          "type": "string"
+        },
+        {
+          "title": "type",
+          "name": "type",
+          "type": "string"
+        },
+        {
+          "title": "preview",
+          "name": "preview",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "experience",
+      "pageBundle": false,
+      "previewPath": null,
+      "fields": [
+        {
+          "title": "Company",
+          "name": "company",
+          "type": "string"
+        },
+        {
+          "title": "Location",
+          "name": "location",
+          "type": "string"
+        },
+        {
+          "title": "From Date",
+          "name": "fromDate",
           "type": "datetime",
           "default": "{{now}}",
-          "isPublishDate": true
+          "isPublishDate": true,
+          "dateFormat": "yy-MM"
         },
         {
-          "title": "Content preview",
-          "name": "preview",
-          "type": "image"
-        },
-        {
-          "title": "Is in draft",
-          "name": "draft",
-          "type": "draft"
+          "title": "To Date",
+          "name": "toDate",
+          "type": "datetime",
+          "dateFormat": "yy-MM"
         },
         {
           "title": "Tags",
@@ -44,18 +93,18 @@
           "type": "categories"
         },
         {
-          "title": "publishDate",
-          "name": "publishDate",
-          "type": "datetime"
-        },
-        {
-          "title": "img",
-          "name": "img",
+          "title": "logo",
+          "name": "logo",
           "type": "string"
         },
         {
-          "title": "img_alt",
-          "name": "img_alt",
+          "title": "Content preview",
+          "name": "preview",
+          "type": "image"
+        },
+        {
+          "title": "type",
+          "name": "type",
           "type": "string"
         }
       ]
@@ -65,7 +114,12 @@
   "frontMatter.preview.host": "http://localhost:3000",
   "frontMatter.content.pageFolders": [
     {
-      "path": "[[workspace]]/src/content/work/nested"
+      "path": "[[workspace]]/src/content/work/nested",
+      "title": "nested"
+    },
+    {
+      "title": "experience",
+      "path": "[[workspace]]/src/content/experience"
     }
   ],
   "frontMatter.content.publicFolder": "public"
