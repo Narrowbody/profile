@@ -1,8 +1,9 @@
 ---
 import Icon from './Icon.astro';
 import helicopter from '../../public/helicopter.svg';
+import type { Code } from 'astro:components';
 ---
-<div class="ops"><h2>Areas of Operations</h2></div>
+<div class="ops"><h2>Operational Areas I work in;</h2></div>
 <section class="box skills">
 
 	<div class="stack gap-2 lg:gap-4">
@@ -13,7 +14,7 @@ import helicopter from '../../public/helicopter.svg';
 
 	<div class="stack gap-2 lg:gap-4">
 		
-		<h2><img src={helicopter.src} alt="image description" /><Icon icon="helicopter" color="var(--accent-regular)" size="2.5rem" gradient /> Helicopter Ops</h2>
+		<h2><img src={helicopter.src} alt="image description" /> Helicopter Ops.</h2>
 		<p>HEMS, SAR, Fire Fighting</p>
 	</div>
 

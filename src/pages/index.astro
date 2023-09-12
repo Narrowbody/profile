@@ -14,7 +14,7 @@ import PortfolioPreview from '../components/PortfolioPreview.astro';
 
 // Page section components
 import ContactCTA from '../components/ContactCTA.astro';
-import Skills from '../components/Skills.astro';
+import OperationalAreas from '../components/OperationalAreas.astro';
 
 // Content Fetching: List four most recent work projects
 const projects = (await getCollection('work'))
@@ -23,40 +23,49 @@ const projects = (await getCollection('work'))
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
----
+
+const skills = [
+	'Over 35 years experience in aviation safety, risk management, quality, maintenance, and manufacturing', 
+	'Safety management system, quality, compliance programs development and implementation expertise', 
+	'Broad aircraft maintenance, inspection, production control, front-line, and supervisory experience', 
+	'Comprehensive investigations, auditing, evaluations, root cause analysis, and process measurement skills',
+	'Proficiency in airline documentation, manual management, system development, and implementation',
+	'Broad international background']
+---s
 
 <BaseLayout>
 	<div class="stack gap-20 lg:gap-48">
 		<div class="wrapper stack gap-8 lg:gap-20">
 			<header class="hero">
 				<Hero
-					title="Hello, my name is Jeanine White"
-					tagline="I am a Creative Developer who is currently based in Portland, Oregon."
+					title="Hello, I'm Levent"
+					tagline="I am an Aviation Safety and Accident Prevention Consultant."
+					sub="I can assist you by;"
 					align="start"
 				>
 					<div class="roles">
-						<Pill><Icon icon="code" size="1.33em" /> Developer</Pill>
-						<Pill><Icon icon="microphone-stage" size="1.33em" /> Speaker</Pill>
-						<Pill><Icon icon="pencil-line" size="1.33em" /> Writer</Pill>
+						<a href="/"><Pill><Icon icon="list-magnifying-glass" size="1.33em" /> Assesing</Pill></a>
+						<a href="/"><Pill><Icon icon="strategy" size="1.33em" /> Advising</Pill></a>
+						<a href="/"><Pill><Icon icon="list-checks" size="1.33em" /> Implementing</Pill></a>
+						<a href="/"><Pill><Icon icon="student" size="1.33em" /> Training</Pill></a>
 					</div>
 				</Hero>
 
 				<img
-					alt="Jeanine White smiling in a red plaid shirt and tortoise shell glasses"
+					alt="Levent Erdem standing..."
 					width="480"
 					height="620"
-					src="/assets/portrait.jpg"
+					src="https://placehold.co/480x620"
 				/>
 			</header>
-
-			<Skills />
+			<OperationalAreas />
 		</div>
 
 		<main class="wrapper stack gap-20 lg:gap-48">
 			<section class="section with-background with-cta">
 				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Selected Work</h3>
-					<p>Take a look below at some of my featured work for clients from the past few years.</p>
+					<h3>Services</h3>
+					<p>Take a look below at some of the services I provided for my clients from the past few years.</p>
 				</header>
 
 				<div class="gallery">
@@ -81,19 +90,18 @@ const projects = (await getCollection('work'))
 
 			<section class="section with-background bg-variant">
 				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Mentions</h3>
+					<h3>Summary of Qualifications</h3>
 					<p>
-						I have been fortunate enough to recieve praise for my work in several publications. Take
-						a look below to learn more.
+						I have been fortunate enough to acquire the following qualifications throughout my extensive aviation career.
 					</p>
 				</header>
 
 				<div class="gallery">
 					<Grid variant="small">
 						{
-							['Medium', 'BuzzFeed', 'The Next Web', 'awwwards.', 'TechCrunch'].map((brand) => (
+							skills.map((quals) => (
 								<li class="mention-card">
-									<p>{brand}</p>
+									<p>{quals}</p>
 								</li>
 							))
 						}
@@ -217,10 +225,12 @@ const projects = (await getCollection('work'))
 		.with-cta .section-header {
 			justify-self: flex-start;
 			text-align: left;
+			
 		}
 
 		.gallery {
 			grid-area: gallery;
+			
 		}
 
 		.cta {
@@ -232,15 +242,16 @@ const projects = (await getCollection('work'))
 
 	.mention-card {
 		display: flex;
-		height: 7rem;
+		height: 9rem;
 		justify-content: center;
 		align-items: center;
-		text-align: center;
+		text-align: left;
 		border: 1px solid var(--gray-800);
 		border-radius: 1.5rem;
 		color: var(--gray-300);
 		background: var(--gradient-subtle);
 		box-shadow: var(--shadow-sm);
+		padding: 1rem;
 	}
 
 	@media (min-width: 50em) {
