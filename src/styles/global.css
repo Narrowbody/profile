@@ -218,6 +218,14 @@ h5 {
   flex-direction: column;
 }
 
+.btn {
+  font-size: var(--text-lg);
+  background-color: var(--accent-overlay);
+  width: 10rem;
+  font-weight: 600;
+  color: var(--gray-100);
+}
+
 .gap-2 {
   gap: 0.5rem;
 }

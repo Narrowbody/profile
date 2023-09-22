@@ -1,126 +1,135 @@
 {
-  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
-  "frontMatter.taxonomy.contentTypes": [
-    {
-      "name": "default",
-      "pageBundle": false,
-      "previewPath": null,
-      "fields": [
-        {
-          "title": "company",
-          "name": "company",
-          "type": "string"
-        },
-        {
-          "title": "location",
-          "name": "location",
-          "type": "string"
-        },
-        {
-          "title": "fromDate",
-          "name": "fromDate",
-          "type": "datetime"
-        },
-        {
-          "title": "toDate",
-          "name": "toDate",
-          "type": "datetime"
-        },
-        {
-          "title": "tags",
-          "name": "tags",
-          "type": "tags"
-        },
-        {
-          "title": "categories",
-          "name": "categories",
-          "type": "categories"
-        },
-        {
-          "title": "logo",
-          "name": "logo",
-          "type": "string"
-        },
-        {
-          "title": "type",
-          "name": "type",
-          "type": "string"
-        },
-        {
-          "title": "preview",
-          "name": "preview",
-          "type": "string"
-        }
-      ]
-    },
-    {
-      "name": "experience",
-      "pageBundle": false,
-      "previewPath": null,
-      "fields": [
-        {
-          "title": "Company",
-          "name": "company",
-          "type": "string"
-        },
-        {
-          "title": "Location",
-          "name": "location",
-          "type": "string"
-        },
-        {
-          "title": "From Date",
-          "name": "fromDate",
-          "type": "datetime",
-          "default": "{{now}}",
-          "isPublishDate": true,
-          "dateFormat": "yy-MM"
-        },
-        {
-          "title": "To Date",
-          "name": "toDate",
-          "type": "datetime",
-          "dateFormat": "yy-MM"
-        },
-        {
-          "title": "Tags",
-          "name": "tags",
-          "type": "tags"
-        },
-        {
-          "title": "Categories",
-          "name": "categories",
-          "type": "categories"
-        },
-        {
-          "title": "logo",
-          "name": "logo",
-          "type": "string"
-        },
-        {
-          "title": "Content preview",
-          "name": "preview",
-          "type": "image"
-        },
-        {
-          "title": "type",
-          "name": "type",
-          "type": "string"
-        }
-      ]
-    }
-  ],
-  "frontMatter.framework.id": "astro",
-  "frontMatter.preview.host": "http://localhost:3000",
-  "frontMatter.content.pageFolders": [
-    {
-      "path": "[[workspace]]/src/content/work/nested",
-      "title": "nested"
-    },
-    {
-      "title": "experience",
-      "path": "[[workspace]]/src/content/experience"
-    }
-  ],
-  "frontMatter.content.publicFolder": "public"
+	"$schema": "https://frontmatter.codes/frontmatter.schema.json",
+	"frontMatter.taxonomy.contentTypes": [
+		{
+			"name": "services",
+			"pageBundle": false,
+			"previewPath": null,
+			"fields": [
+				{
+					"title": "company",
+					"name": "company",
+					"type": "string"
+				},
+				{
+					"title": "location",
+					"name": "location",
+					"type": "string"
+				},
+				{
+					"title": "fromDate",
+					"name": "fromDate",
+					"type": "datetime"
+				},
+				{
+					"title": "toDate",
+					"name": "toDate",
+					"type": "datetime"
+				},
+				{
+					"title": "tags",
+					"name": "tags",
+					"type": "tags"
+				},
+				{
+					"title": "categories",
+					"name": "categories",
+					"type": "categories"
+				},
+				{
+					"title": "logo",
+					"name": "logo",
+					"type": "string"
+				},
+				{
+					"title": "type",
+					"name": "type",
+					"type": "string"
+				},
+				{
+					"title": "preview",
+					"name": "preview",
+					"type": "string"
+				}
+			]
+		},
+		{
+			"name": "experience",
+			"pageBundle": false,
+			"previewPath": null,
+			"fields": [
+				{
+					"title": "Company",
+					"name": "company",
+					"type": "string"
+				},
+				{
+					"title": "Location",
+					"name": "location",
+					"type": "string"
+				},
+				{
+					"title": "position",
+					"name": "position",
+					"type": "string"
+				},
+				{
+					"title": "From Date",
+					"name": "fromDate",
+					"type": "datetime",
+					"default": "{{now}}",
+					"isPublishDate": true,
+					"dateFormat": "yy-MM"
+				},
+				{
+					"title": "To Date",
+					"name": "toDate",
+					"type": "datetime",
+					"dateFormat": "yy-MM"
+				},
+				{
+					"title": "Tags",
+					"name": "tags",
+					"type": "tags"
+				},
+				{
+					"title": "Categories",
+					"name": "categories",
+					"type": "categories"
+				},
+				{
+					"title": "logo",
+					"name": "logo",
+					"type": "string"
+				},
+				{
+					"title": "Content preview",
+					"name": "preview",
+					"type": "image"
+				},
+				{
+					"title": "type",
+					"name": "type",
+					"type": "string"
+				}
+			]
+		}
+	],
+	"frontMatter.framework.id": "astro",
+	"frontMatter.preview.host": "http://localhost:3000",
+	"frontMatter.content.pageFolders": [
+		{
+			"path": "[[workspace]]/src/content/services/nested",
+			"title": "nested"
+		},
+		{
+			"title": "experience",
+			"path": "[[workspace]]/src/content/experience"
+		},
+		{
+			"title": "services",
+			"path": "[[workspace]]/src/content/services"
+		}
+	],
+	"frontMatter.content.publicFolder": "public"
 }

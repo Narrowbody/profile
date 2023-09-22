@@ -1,0 +1,54 @@
+---
+
+---
+
+<form>
+ <input type="text" id="fullName" name="fullName" placeholder="full name"/><br/>
+ <input type="email" id="email" name="email" placeholder="email"/><br/>
+ <input type="button" value="Submit" class="menu-button"/>
+</form>
+
+<style>
+ #email, #fullName{
+  padding: 5px;
+  width: 600px;
+  border-radius: 5px;border-color: darkgray;
+  border-style: solid;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  font-size: var(--text-xxl);
+ }
+
+
+
+ 	.menu-button {
+		position: relative;
+		display: flex;
+		border: 0;
+		border-radius: 999rem;
+		padding: 0.5rem;
+		font-size: 1.5rem;
+		color: var(--gray-300);
+		background: radial-gradient(var(--gray-900), var(--gray-800) 150%);
+		box-shadow: var(--shadow-md);
+	}
+
+	.menu-button[aria-expanded='true'] {
+		color: var(--gray-0);
+		background: linear-gradient(180deg, var(--gray-600), transparent),
+			radial-gradient(var(--gray-900), var(--gray-800) 150%);
+	}
+
+	.menu-button[hidden] {
+		display: none;
+	}
+
+	.menu-button::before {
+		position: absolute;
+		inset: -1px;
+		content: '';
+		background: var(--gradient-stroke);
+		border-radius: 999rem;
+		z-index: -1;
+	}
+</style>

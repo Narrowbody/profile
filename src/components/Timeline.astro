@@ -1,0 +1,367 @@
+---
+import { getCollection } from 'astro:content';
+
+// Content Fetching: List all experiences
+const experiences = (await getCollection('experience'))
+	.sort((b, a) => b.data.fromDate.valueOf() - a.data.fromDate.valueOf());
+
+---
+		{
+								/* experiences.map((experience) => (
+									<main>
+										<div class="w3-card-4" style="width:75%">
+											<div class="w3-ul grid-container-main card"> 
+													<li class="hidden">
+														<div class="grid-container">
+																	<div class="grid-item-left">
+																		<img src={experience.data.logo} alt="" class="logo"/>
+																	</div>
+																	
+																	<div class="grid-item-right">
+																		<h5 class="w3-row w3-left-align"> {experience.data.company}</h5>
+																		<h6 class="w3-row w3-left-align">{ experience.data.location }</h6>
+																		<div class="w3-row w3-left-align"><p>{experience.data.position}</p> 
+																		<div class=" w3-left-align"><p>
+																			{experience.data.fromDate.toLocaleDateString(undefined, {
+																				month: "short"
+																			})}, 
+																			{experience.data.fromDate.getFullYear()}
+																			to 
+																			{experience.data.toDate.toLocaleDateString(undefined, {
+																				month: "short"
+																			})}, 
+																			{experience.data.toDate.getFullYear()}
+																			</p>
+																		</div>
+																		</div>
+																	</div>
+														</div>			
+													</li>
+												</div>
+										</div>
+									</main>
+								)) */
+							}
+
+							<div class="timeline main">
+								<div class="container left-container hidden">
+										<img src="/assets/logos/tai180x100.png" class="logo-container tai">
+									<div class="text-box">
+										<h2>Company A</h2>
+										<small>2018-2019</small>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci voluptatem consequuntur veniam laboriosam voluptatum, porro quo nobis ducimus blanditiis deleniti?</p>
+										<span class="left-container-arrow"></span>
+									</div>
+								</div>
+
+								<div class="container right-container hidden">
+									<img src="/assets/logos/panam101x100.png" class="logo-container panam">
+									<div class="text-box">
+										<h2>Company B</h2>
+										<small>2019-2020</small>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci voluptatem consequuntur veniam laboriosam voluptatum, porro quo nobis ducimus blanditiis deleniti?</p>
+										<span class="right-container-arrow"></span>
+									</div>
+								</div>
+
+								<div class="container left-container hidden">
+									<img src="/assets/logos/delta657x100.png" class="logo-container">
+									<div class="text-box">
+										<h2>Company C</h2>
+										<small>2020-2021</small>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci voluptatem consequuntur veniam laboriosam voluptatum, porro quo nobis ducimus blanditiis deleniti?</p>
+										<span class="left-container-arrow"></span>
+									</div>
+								</div>
+
+								<div class="container right-container hidden">
+									<img src="/assets/logos/jetblue298x100.png" class="logo-container jetblue">
+									<div class="text-box">
+										<h2>Company D</h2>
+										<small>2021-2022</small>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci voluptatem consequuntur veniam laboriosam voluptatum, porro quo nobis ducimus blanditiis deleniti?</p>
+										<span class="right-container-arrow"></span>
+									</div>
+								</div>
+
+								<div class="container left-container hidden">
+									<img src="/assets/logos/marsh665x100.png" class="logo-container">
+									<div class="text-box">
+										<h2>Company E</h2>
+										<small>2020-2021</small>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci voluptatem consequuntur veniam laboriosam voluptatum, porro quo nobis ducimus blanditiis deleniti?</p>
+										<span class="left-container-arrow"></span>
+									</div>
+								</div>
+
+								<div class="container right-container hidden">
+									<img src="/assets/logos/world100x100.jpeg" class="logo-container world">
+									<div class="text-box">
+										<h2>Company F</h2>
+										<small>2021-2022</small>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci voluptatem consequuntur veniam laboriosam voluptatum, porro quo nobis ducimus blanditiis deleniti?</p>
+										<span class="right-container-arrow"></span>
+									</div>
+								</div>
+
+							</div>
+
+
+
+
+
+
+<script src="../scripts/animate-scroll.js"/>
+
+
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+	background: #2e364a;
+}
+
+.timeline {
+	position: relative;
+	max-width: 1200px;
+	margin: 100px auto;
+	border: 1px solid lightgrey;
+}
+
+.container {
+	padding: 10px 80px;
+	position: relative;
+	width: 50%;
+	animation: movedown 1s linear right: ;;
+	opacity: 0;
+	border: 1px solid red;
+}
+
+@keyframes movedown {
+	0% {
+		opacity: 1;
+		transform: translateY(-30px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+
+.container:nth-child(2){
+	animation-delay: 2s;
+}
+
+.container:nth-child(3){
+	animation-delay: 4s;
+}
+
+.container:nth-child(4){
+	animation-delay: 6s;
+}
+
+.container:nth-child(5){
+	animation-delay: 8s;
+}
+
+.container:nth-child(6){
+	animation-delay: 10s;
+}
+
+.text-box {
+	padding: 20px 30px;
+	background: #fff;
+	position: relative;
+	border-radius: 6px;
+	font-size: 15px;
+	border: 1px solid pink;
+}
+
+ .left-container {
+		left: 0;
+		text-align: right;
+	}
+
+	.right-container {
+		left: 50%;
+	}
+
+	.logo-container {
+		position: absolute;
+		border: 1px solid red;
+		border-radius: 0%;
+		width: auto;
+		height: 15%;
+		background-color: #fff;
+		right: -40%;
+		top: 25%;
+		z-index: 10;		
+	}
+
+	.tai {
+	right: -6%
+	}
+
+	.panam {
+		left: -22px;
+	}
+
+	.jetblue {
+		left: -62px;
+	}
+
+	.world {
+		left: -22px
+	}
+
+
+/* 	.right-container img {
+		left: -50px;
+	} */
+
+	.timeline::after {
+		content: '';
+		position: absolute;
+		width: 3px;
+		height: 80%;
+		background: #fff;
+		top: 0;
+		left: 50%;
+		margin-left: -3px;
+		z-index: -1;
+		animation: moveline 12s linear forwards;
+	}
+
+	@keyframes moveline {
+		0%{
+			height: 0;
+		}
+		100%{
+			height: 100%;
+		}
+	}
+	.text-box h2 {
+		font-weight: 600;
+	}
+
+	.text-box small {
+		display: inline-block;
+		margin-bottom: 15px;
+	}
+
+	.left-container-arrow {
+		height: 0;
+		width: 0;
+		position: absolute;
+		top: 25%;
+		z-index: 1;
+		border-top: 15px solid transparent;
+		border-bottom: 15px solid transparent;
+		border-left: 15px solid #fff;
+		right: -15px;
+	}
+
+	.right-container-arrow {
+		height: 0;
+		width: 0;
+		position: absolute;
+		top: 25%;
+		z-index: 1;
+		border-top: 15px solid transparent;
+		border-bottom: 15px solid transparent;
+		border-right: 15px solid #fff;
+		left: -15px;
+	}
+
+@media screen and (max-width: 600px;) {
+	.timeline{
+		margin: 50px auto;
+	}
+	.timeline::after{
+		left: 31px;
+	}
+	.container{
+		width: 100%;
+		padding-left: 80px;
+		padding-right: 25px;
+	}
+	.text-box{
+		font-size: 13px;
+	}
+	.text-box small{
+		margin-bottom: 10px;
+	}
+}
+
+
+
+
+
+
+.grid-container-main{
+	display: grid;
+	grid-template-columns: auto auto;
+ align-content: baseline;
+	box-sizing: border-box;
+}
+
+	@keyframes mymove {
+  50% {right: 500px;}
+}
+
+.card {
+	position: absolute;
+	animation: mymove 10s infinite;
+	right: 0;
+}
+
+.grid-container{
+	display: grid;
+	grid-template-columns: auto auto;
+	justify-content: left;
+ align-content: baseline;
+	
+}
+
+
+
+.grid-item-left{
+	width: 8rem;
+	display: grid;
+ align-content: center;
+ justify-content: center;
+}
+
+.grid-item-right{
+padding-left: 1rem;
+}
+
+.heading {
+	display: flex;
+}
+
+.logo {
+	width: 7rem;
+	height: auto;
+}
+
+	main {
+		display: grid;
+		place-items: center;
+		align-content: center;
+		min-height: 20vh;
+		
+	}
+
+	.hidden {
+		opacity: 0;
+		transition: all 10s;
+	}
+
+	.show {
+		opacity: 1;
+	}
+</style>

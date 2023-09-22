@@ -11,27 +11,33 @@ import Hero from '../components/Hero.astro';
 import Icon from '../components/Icon.astro';
 import Pill from '../components/Pill.astro';
 import PortfolioPreview from '../components/PortfolioPreview.astro';
+import ExperiencePreview from '../components/ExperiencePreview.astro';
 
 // Page section components
 import ContactCTA from '../components/ContactCTA.astro';
 import OperationalAreas from '../components/OperationalAreas.astro';
+import Timeline from '../components/Timeline.astro';
 
-// Content Fetching: List four most recent work projects
-const projects = (await getCollection('work'))
+// Content Fetching: List four most recent services
+const services = (await getCollection('services'))
 	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
 	.slice(0, 4);
+
+	// Content Fetching: Experiences
+const experiences = (await getCollection('experience'))
+	.sort((a, b) => b.data.fromDate.valueOf() - a.data.fromDate.valueOf());
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
 
-const skills = [
-	'Over 35 years experience in aviation safety, risk management, quality, maintenance, and manufacturing', 
+
+	const quals = ['Over 35 years experience in aviation safety, risk management, quality, maintenance, and manufacturing', 
 	'Safety management system, quality, compliance programs development and implementation expertise', 
 	'Broad aircraft maintenance, inspection, production control, front-line, and supervisory experience', 
 	'Comprehensive investigations, auditing, evaluations, root cause analysis, and process measurement skills',
 	'Proficiency in airline documentation, manual management, system development, and implementation',
 	'Broad international background']
----s
+---
 
 <BaseLayout>
 	<div class="stack gap-20 lg:gap-48">
@@ -39,7 +45,7 @@ const skills = [
 			<header class="hero">
 				<Hero
 					title="Hello, I'm Levent"
-					tagline="I am an Aviation Safety and Accident Prevention Consultant."
+					tagline="I am an Aviation Safety/ Accident Prevention Consultant and Educator."
 					sub="I can assist you by;"
 					align="start"
 				>
@@ -55,8 +61,9 @@ const skills = [
 					alt="Levent Erdem standing..."
 					width="480"
 					height="620"
-					src="https://placehold.co/480x620"
+					src="/assets/levent-externado-zoomed.jpg"
 				/>
+				<!-- src="https://placehold.co/480x620" -->
 			</header>
 			<OperationalAreas />
 		</div>
@@ -71,9 +78,9 @@ const skills = [
 				<div class="gallery">
 					<Grid variant="offset">
 						{
-							projects.map((project) => (
+							services.map((service) => (
 								<li>
-									<PortfolioPreview project={project} />
+									<PortfolioPreview services={service} />
 								</li>
 							))
 						}
@@ -81,40 +88,54 @@ const skills = [
 				</div>
 
 				<div class="cta">
-					<CallToAction href="/work/">
+					<CallToAction href="/services/">
 						View All
 						<Icon icon="arrow-right" size="1.2em" />
 					</CallToAction>
 				</div>
 			</section>
 
-			<section class="section with-background bg-variant">
-				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Summary of Qualifications</h3>
-					<p>
-						I have been fortunate enough to acquire the following qualifications throughout my extensive aviation career.
-					</p>
-				</header>
-
-				<div class="gallery">
-					<Grid variant="small">
-						{
-							skills.map((quals) => (
-								<li class="mention-card">
-									<p>{quals}</p>
-								</li>
-							))
-						}
-					</Grid>
-				</div>
-			</section>
-		</main>
-
-		<ContactCTA />
-	</div>
+						<section class="section with-background bg-variant">
+							<header class="section-header stack gap-2 lg:gap-4">
+								<h3>Summary of Qualifications</h3>
+								<p>
+									I have been fortunate to acquire the following qualifications throughout my extensive aviation career.
+								</p>
+							</header>
+							<div class="gallery">
+								<Grid variant="small">
+									{ quals.map((quals) => (
+													<li class="mention-card"> 
+														<h6>{ quals }</h6>
+													</li>
+										))
+									}
+								</Grid>
+							</div>
+						</section>
+						<section class="section with-background bg-variant">
+							<header class="section-header stack gap-2 lg:gap-4">
+								<h3>Experience Timeline</h3>
+								
+							</header>
+						</section>
+					</main>
+					<Timeline />
+					
+				<ContactCTA />
+			</div>
+			
 </BaseLayout>
 
 <style>
+
+	.container{
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		
+	}
+
 	.hero {
 		display: flex;
 		flex-direction: column;
@@ -132,6 +153,7 @@ const skills = [
 		object-position: top;
 		border-radius: 1.5rem;
 		box-shadow: var(--shadow-md);
+		object-fit: cover;
 	}
 
 	@media (min-width: 50em) {
