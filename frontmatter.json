@@ -113,15 +113,81 @@
           "type": "string"
         }
       ]
+    },
+    {
+      "name": "courses",
+      "pageBundle": false,
+      "previewPath": null,
+      "fields": [
+        {
+          "title": "Course Title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "Duration",
+          "name": "duration",
+          "type": "string"
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "type": "tags"
+        },
+        {
+          "title": "Course Image",
+          "name": "courseImage",
+          "type": "image"
+        },
+        {
+          "title": "Content preview",
+          "name": "preview",
+          "type": "image",
+          "isPreviewImage": true
+        },
+        {
+          "title": "Image Alt",
+          "name": "img_alt",
+          "type": "string"
+        },
+        {
+          "title": "slug",
+          "name": "slug",
+          "type": "slug",
+          "editable": true,
+          "default": "{{slug}}"
+        },
+        {
+          "title": "type",
+          "name": "type",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "frontMatter.taxonomy.customTaxonomy": [
+    {
+      "id": "clientCategory",
+      "options": [
+        "Airline",
+        "Helicopter Operator",
+        "MRO",
+        "Aerodrome/Airport",
+        "Ground Handling",
+        "Manufacturer",
+        "Military Aviation",
+        "UAV or Autonomous Vehicle"
+      ]
     }
   ],
   "frontMatter.framework.id": "astro",
   "frontMatter.preview.host": "http://localhost:3000",
   "frontMatter.content.pageFolders": [
-    {
-      "path": "[[workspace]]/src/content/services/nested",
-      "title": "nested"
-    },
     {
       "title": "experience",
       "path": "[[workspace]]/src/content/experience"
@@ -129,6 +195,10 @@
     {
       "title": "services",
       "path": "[[workspace]]/src/content/services"
+    },
+    {
+      "title": "courses",
+      "path": "[[workspace]]/src/content/courses"
     }
   ],
   "frontMatter.content.publicFolder": "public",

@@ -24,4 +24,16 @@ export const collections = {
 			img_alt: z.string().optional(),
 		}),
 	}),
+		courses: defineCollection({
+		type: 'content',
+		schema: z.object({
+			title: z.string(),
+			description: z.string(),
+			duration: z.string(),
+			publishDate: z.coerce.date(),
+			tags: z.array(z.string()),
+			img: z.string().optional(),
+			img_alt: z.string().optional(),
+		}),
+	}),
 };

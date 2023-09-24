@@ -43,6 +43,15 @@ const experiences = (await getCollection('experience'))
 	<div class="stack gap-20 lg:gap-48">
 		<div class="wrapper stack gap-8 lg:gap-20">
 			<header class="hero">
+
+				<img
+				 src="/assets/levent-externado-zoomed.jpeg"
+					alt="Levent Erdem standing..."
+					width="480"
+					height="620"
+				/>
+				<!-- src="https://placehold.co/480x620" -->
+
 				<Hero
 					title="Hello, I'm Levent"
 					tagline="I am an Aviation Safety/ Accident Prevention Consultant and Educator."
@@ -53,17 +62,11 @@ const experiences = (await getCollection('experience'))
 						<a href="/"><Pill><Icon icon="list-magnifying-glass" size="1.33em" /> Assesing</Pill></a>
 						<a href="/"><Pill><Icon icon="strategy" size="1.33em" /> Advising</Pill></a>
 						<a href="/"><Pill><Icon icon="list-checks" size="1.33em" /> Implementing</Pill></a>
-						<a href="/"><Pill><Icon icon="student" size="1.33em" /> Training</Pill></a>
+						<a href="/courses/"><Pill><Icon icon="student" size="1.33em" /> Training</Pill></a>
 					</div>
 				</Hero>
 
-				<img
-					alt="Levent Erdem standing..."
-					width="480"
-					height="620"
-					src="/assets/levent-externado-zoomed.jpg"
-				/>
-				<!-- src="https://placehold.co/480x620" -->
+				
 			</header>
 			<OperationalAreas />
 		</div>
@@ -149,17 +152,17 @@ const experiences = (await getCollection('experience'))
 
 	.hero img {
 		aspect-ratio: 5 / 4;
-		object-fit: cover;
+		object-fit: contain;
 		object-position: top;
-		border-radius: 1.5rem;
+		border-radius: 1rem;
 		box-shadow: var(--shadow-md);
-		object-fit: cover;
+		filter: grayscale(0%);
 	}
 
 	@media (min-width: 50em) {
 		.hero {
 			display: grid;
-			grid-template-columns: 6fr 4fr;
+			grid-template-columns: 4fr 4fr;
 			padding-inline: 2.5rem;
 			gap: 3.75rem;
 		}
