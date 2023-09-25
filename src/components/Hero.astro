@@ -24,9 +24,13 @@ const { align = 'center', tagline, sub, title } = Astro.props;
 		text-align: center;
 	}
 
-	.title,
-	.tagline {
+	.title{
 		max-width: 37ch;
+		margin-inline: auto;
+	}
+
+	.tagline {
+		max-width: 100ch; 
 		margin-inline: auto;
 	}
 
