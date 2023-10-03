@@ -19,3 +19,6 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+#added per recommendation of Astro documentation
+echo "\n.astro" >> .gitignore

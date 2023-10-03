@@ -1,0 +1,35 @@
+---
+interface Props {
+ company_title: string;
+ from: string;
+ to: string;
+ position: string;
+}
+
+const { company_title, from, to, position } = Astro.props;
+---
+
+<div class="headline">
+ <h4 class="company-title">{ company_title }</h4>
+ <h5 class="duration">{ from } to { to }</h5>
+ <h5 class="position">{ position }</h5>
+</div>
+
+
+<style>
+ .headline {
+
+ }
+
+ .company-title {
+
+ }
+
+.duration {
+
+}
+
+.position {
+
+}
+</style>

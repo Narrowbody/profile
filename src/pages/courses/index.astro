@@ -11,6 +11,8 @@ import Grid from '../../components/Grid.astro';
 const courses = (await getCollection('courses')).sort(
 	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
 );
+
+
 ---
 
 <BaseLayout
@@ -21,7 +23,7 @@ const courses = (await getCollection('courses')).sort(
 		<main class="wrapper stack gap-8">
 			<Hero
 				title="Training Provided"
-				tagline="Below, some of the different type of courses I can provide..."
+				tagline="Below are some of the different types of courses I provide..."
 				align="start"
 			/>
 			<Grid variant="offset">
@@ -34,6 +36,6 @@ const courses = (await getCollection('courses')).sort(
 				}
 			</Grid>
 		</main>
-		<ContactCTA />
+		<ContactCTA titleForCTA = "Interested in a course?"/>
 	</div>
 </BaseLayout>

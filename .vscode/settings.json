@@ -1,5 +1,5 @@
 {
- "cSpell.words": [
-  "astro"
- ]
+	"cSpell.words": ["astro", "Türkiye"],
+	"prettier.tabWidth": 4,
+	"prettier.bracketSameLine": true
 }

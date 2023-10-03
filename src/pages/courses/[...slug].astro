@@ -33,7 +33,8 @@ const { Content } = await entry.render();
 			<header>
 				<div class="wrapper stack gap-2">
 					<a class="back-link" href="/courses/"><Icon icon="arrow-left" />Courses</a>
-					<Hero title={entry.data.title} align="start">
+					
+					<Hero title={entry.data.title} align="start" sub={ entry.data.duration }>
 						<div class="details">
 							<div class="tags">
 								{entry.data.tags.map((t) => <Pill>{t}</Pill>)}
@@ -41,8 +42,10 @@ const { Content } = await entry.render();
 							<p class="description">{entry.data.description}</p>
 						</div>
 					</Hero>
+
 				</div>
 			</header>
+
 			<main class="wrapper">
 				<div class="stack gap-10 content">
 					{entry.data.img && <img src={entry.data.img} alt={entry.data.img_alt || ''} />}
@@ -51,6 +54,7 @@ const { Content } = await entry.render();
 					</div>
 				</div>
 			</main>
+
 		</div>
 		<ContactTrainingCTA />
 	</div>
@@ -81,8 +85,9 @@ const { Content } = await entry.render();
 	}
 
 	.description {
-		font-size: var(--text-lg);
+		font-size: var(--text-xl);
 		max-width: 54ch;
+		padding-top: 4rem;
 	}
 
 	.content {
@@ -131,6 +136,14 @@ const { Content } = await entry.render();
 	.content :global(a:hover),
 	.content :global(a:focus) {
 		text-decoration-color: currentColor;
+	}
+
+	.content :global(p) {
+		font-size: larger;
+	}
+
+	.content :global(ul) {
+		font-size: large;
 	}
 
 	@media (min-width: 50em) {

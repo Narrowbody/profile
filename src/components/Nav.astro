@@ -1,4 +1,5 @@
 ---
+//import { Icon } from "astro-icon";
 import Icon from './Icon.astro';
 import ThemeToggle from './ThemeToggle.astro';
 import type { iconPaths } from './IconPaths';
@@ -25,6 +26,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 <nav>
 	<div class="menu-header">
 		<a href="/" class="site-title">
+			<!-- <Icon name="arrows-more-up-rounded" width= "48"/> -->
 			<Icon icon="airplane-tilt" color="var(--accent-regular)" size="1.6em" gradient />
 			 Levent Erdem
 		</a>
@@ -178,6 +180,10 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 		color: var(--gray-0);
 		text-decoration: none;
 	}
+
+	[astro-icon] {
+  color: var(--accent-dark);
+ }
 
 	.menu-button {
 		position: relative;

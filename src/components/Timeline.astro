@@ -1,12 +1,17 @@
 ---
 import { getCollection } from 'astro:content';
+import Grid from './Grid.astro';
+import ExperiencePreview from './ExperiencePreview.astro';
+
 
 // Content Fetching: List all experiences
 const experiences = (await getCollection('experience'))
 	.sort((b, a) => b.data.fromDate.valueOf() - a.data.fromDate.valueOf());
 
+const { data } = Astro.props;
 ---
-		{
+
+		<!-- {
 								/* experiences.map((experience) => (
 									<main>
 										<div class="w3-card-4" style="width:75%">
@@ -41,25 +46,37 @@ const experiences = (await getCollection('experience'))
 										</div>
 									</main>
 								)) */
-							}
+								} -->
 
-							<div class="timeline main">
-								<div class="container left-container hidden">
-										<img src="/assets/logos/tai180x100.png" class="logo-container tai">
-									<div class="text-box">
-										<h2>Company A</h2>
-										<small>2018-2019</small>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci voluptatem consequuntur veniam laboriosam voluptatum, porro quo nobis ducimus blanditiis deleniti?</p>
-										<span class="left-container-arrow"></span>
-									</div>
+								<div class="gallery">
+				     <Grid variant="offset">
+										{
+												experiences.map((experience) => (
+												<li>
+														<ExperiencePreview experiences={ experience } />
+												</li>
+												))
+										}
+									</Grid>
+								</div>
+
+							 
+							<!-- <div class="timeline main">
+												<div class="container left-container hidden">
+														<img src="/assets/logos/tai180x100.png" class="logo-container tai">
+															<div class="text-box">
+																<h2></h2>
+																<small></small>
+																<p></p>
+														<span class="left-container-arrow"></span>
+												</div>
 								</div>
 
 								<div class="container right-container hidden">
 									<img src="/assets/logos/panam101x100.png" class="logo-container panam">
 									<div class="text-box">
-										<h2>Company B</h2>
-										<small>2019-2020</small>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci voluptatem consequuntur veniam laboriosam voluptatum, porro quo nobis ducimus blanditiis deleniti?</p>
+										<h2></h2>
+										<small></p>
 										<span class="right-container-arrow"></span>
 									</div>
 								</div>
@@ -69,7 +86,7 @@ const experiences = (await getCollection('experience'))
 									<div class="text-box">
 										<h2>Company C</h2>
 										<small>2020-2021</small>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci voluptatem consequuntur veniam laboriosam voluptatum, porro quo nobis ducimus blanditiis deleniti?</p>
+										<p></p>
 										<span class="left-container-arrow"></span>
 									</div>
 								</div>
@@ -79,7 +96,7 @@ const experiences = (await getCollection('experience'))
 									<div class="text-box">
 										<h2>Company D</h2>
 										<small>2021-2022</small>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci voluptatem consequuntur veniam laboriosam voluptatum, porro quo nobis ducimus blanditiis deleniti?</p>
+										<p></p>
 										<span class="right-container-arrow"></span>
 									</div>
 								</div>
@@ -89,7 +106,7 @@ const experiences = (await getCollection('experience'))
 									<div class="text-box">
 										<h2>Company E</h2>
 										<small>2020-2021</small>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci voluptatem consequuntur veniam laboriosam voluptatum, porro quo nobis ducimus blanditiis deleniti?</p>
+										<p></p>
 										<span class="left-container-arrow"></span>
 									</div>
 								</div>
@@ -99,13 +116,14 @@ const experiences = (await getCollection('experience'))
 									<div class="text-box">
 										<h2>Company F</h2>
 										<small>2021-2022</small>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci voluptatem consequuntur veniam laboriosam voluptatum, porro quo nobis ducimus blanditiis deleniti?</p>
+										<p></p>
 										<span class="right-container-arrow"></span>
 									</div>
 								</div>
-
-							</div>
-
+							</div> -->
+							
+							
+							
 
 
 

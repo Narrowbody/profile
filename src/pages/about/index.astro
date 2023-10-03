@@ -1,0 +1,169 @@
+---
+//About Page
+import { getCollection, getEntry } from 'astro:content';
+const entry = (await getEntry('about', 'bio'));
+
+const { Content, headings } = await entry.render();
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+import ContactCTA from '../../components/ContactCTA.astro';
+import Hero from '../../components/Hero.astro';
+
+import { Image } from 'astro:assets';
+import leventLandscape from "/src/images/levent-landscape.png"
+---
+
+<BaseLayout title="About | Levent Erdem" description="About Levent Erdem - Aviation Safety and Accident Prevention Consultant">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+
+			<Hero
+				title="My Bio"
+				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+			>
+				<Image src= { leventLandscape }  alt="Levent Erdem landscape view" />
+			</Hero>
+
+				<section><!--Headline Section -->
+								<h2 class="section-title">{(headings[0].text)}</h2>
+								<div class="typo">
+												<p>
+																{ (entry.data.headline) }
+												</p>
+								</div>
+			</section>
+			
+			<section><!--Professional Experience Section -->
+								<h2 class="section-title">{ (headings[1].text) }</h2>
+								<div class="typo">
+												<p>Since 2014, I have assessed, advised, and developed numerous safety, compliance, and management programs at various major airlines, helicopter mission critical services, general aviation operations, maintenance repair organizations, airports, autonomous vehicles (AV), and military operations. From 2011 to 2014, I also served as Senior Vice President, Aviation and Aerospace Practice, at Marsh London, providing consultancy services around the world in the same fields mentioned above.<br/>
+												<br/>
+												Before starting my career as a consultant in 2011, I was the Director of System Safety at JetBlue Airways in New York from 2006 to 2011. During my tenure at JetBlue, I and my team developed and implemented various system safety and operational compliance programs. Together, we led the Safety Management System (SMS) implementation project, prepared the airline, and successfully completed requirements to receive the IATA Operational Safety Audit Program (IOSA) registration as the first Low Cost Carrier (LCC) in the United States. We have designed, implemented, and later received a model-air carrier designation from the Department of Defense (DoD) for JetBlue Airways’ Internal Evaluation Program (IEP), and while at JetBlue, I have participated in spearheading, designing, and implementing an industry-first, XML-based, central documentation and manual management system for the entire airline. Prior to joining JetBlue, from 1986 to 2006, for a total of twenty years, I served in a variety of front-line and management positions in the Maintenance/Engineering and Safety/Quality Departments of Delta Air Lines (15 years), Pan American World Airways (3 years), and Turkish Aerospace Industries, a subsidiary of General Dynamics (2 years).<br/>
+													<br/>
+												During my career, I have created various oversight, training, and qualification programs, designed and developed web-based, classroom, and on-the-job training modules, and personally instructed individuals to develop and continually improve talent. I developed and was the leading educator in the Aviation Training Center (Centro de Capacitacion Aeronautica) in Bogota, Colombia, providing training to Aviation Safety Certificate attendants at the Universidad Externado de Colombia. I have been sought by the Federal Aviation Administration as a Subject Matter Expert (SME) for Advisory Circular Development on Internal Evaluation Program for U.S. Airlines (AC 120-59A), and have participated in various task forces as an SME, representing JetBlue Airways and Delta Air Line.<br/>
+											<br/>
+											I have a broad international background. During my aviation career, I have collaborated with a diverse group of experts from all around the world during the initial development phase of the IOSA program. I have participated and worked directly with the top officials of the U.S., Türkiye, Dominican Republic, England, Germany, and Peru during three major airline accident investigations. I have worked as a coordinator between the Turkish Air Force, the U.S. Air Force, General Dynamics, and General Electric during the initial phase of the F-16C/D aircraft manufacturing project in Ankara, Türkiye. I am a dual citizen of the United States and Türkiye.
+										</p>
+								</div>
+			</section>
+			
+			<section><!--Education Section -->
+				<h2 class="section-title">{ (headings[2].text)  }</h2>
+				<div class="typo">
+					<p>
+						<ul>
+							<li>George Washington University, Washington, DC USA (2007)
+								<ul>
+									<li>Aviation Safety and Security Program</li>
+								</ul>
+							</li>
+							<li>Embry-Riddle Aeronautical University, Atlanta, GA USA (2000)
+								<ul>
+									<li>B.S. degree program in Professional Aeronautics, with minors in Aviation Safety and Business Administration (G.P.A. 4.0, Dean's List)</li>
+								</ul>
+							</li>
+							<li>Texas State Technical Institute, Amarillo, TX (1984)
+								<ul>
+									<li>A.A.S. degree in Aviation Maintenance (G.P.A. 3.8)</li>
+								</ul>
+						</ul>
+    </p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">{ (headings[3].text)  }</h2>
+				<div class="typo">
+					<p>
+						<ul>
+						<li>American Society for Quality - Certified Quality Auditor</li>
+						<li>American Society for Quality - Certified Manager of Quality/Operational Excellence</li>
+						<li>Senior Member - American Society for Quality</li>
+						<li>IATA-IOSA Program Auditor</li>
+						<li>Lead Auditor - ANSI/RAB ISO 9000:2000</li>
+						<li>Internal Auditor - ISO 9000:2000</li>
+						</ul>
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">{ (headings[4].text)  }</h2>
+				<div class="typo">
+					<p>{ (entry.data.licenses) }</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">{ (headings[5].text)  }</h2>
+				<div class="typo">
+					<p>{ (entry.data.languages) }</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA titleForCTA = "Interested in working together?"/>
+	</div>
+</BaseLayout>
+
+<style>
+ .typo {
+		line-height: 2.5rem;
+		font-size: larger;
+	}
+
+
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>

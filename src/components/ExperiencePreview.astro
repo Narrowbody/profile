@@ -1,88 +1,75 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 
-
 interface Props {
 	experiences: CollectionEntry<'experience'>;
 }
 
-const { data, slug } = Astro.props.experiences;
-
-
+const { data } = Astro.props.experiences;
 ---
 
-<script>
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    console.log(entry);
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-    } else {
-      entry.target.classList.remove('show');
-    }
-  });
-});
-const hiddentElements = document.querySelectorAll('.hidden');
-hiddentElements.forEach((el) => observer.observe(el));
-</script>
 
 <main>
-	<section class="hidden">
-			<a class="box" href={`/experience/${slug}`}>
-				<span class="">{data.company}</span>
-				<h2>{data.fromDate} to {data.toDate}</h2>
-				<img src={data.logo} alt={data.location || ''} loading="lazy" decoding="async" />
-			</a>
-	</section>
+		<section class="grid-container">
+			<div class="grid-item">
+				<li>
+					<experience data={data.logo}/>
+					<h2>{data.company}</h2>
+				</li>
+			</div>
+		</section>
 </main>
-
 
 <style>
 main {
 		display: grid;
 		place-items: center;
 		align-content: center;
-		min-height: 40vh;
-	
-	}
-
-	.hidden {
-		opacity: 0;
-		transition: all 3s;
-	}
-
-	.show {
-		opacity: 1;
+		
 	}
 
 		.box {
 		border: 1px solid var(--gray-800);
-		border-radius: 0.75rem;
+		border-radius: 0.05rem;
 		padding: 1.5rem;
 		background-color: var(--gray-999_40);
 		box-shadow: var(--shadow-sm);
 	}
 
-		h2 {
-		font-size: var(--text-lg);
+	.grid-container {
+		display: grid;
+  grid-template-columns: auto;
+		width: 400px;
+	 height: auto;
+		border-radius: 1rem;
+		background-color: #2196F3;
+		padding: 15px;
 	}
 
-	.card {
-		
+	.grid-item {
+		background-color: rgba(255, 255, 255, 0.8);
+		border: 1px solid rgba(0, 0, 0,, 0.8);
+		padding: 20px;
+		font-size: xx-large;
+		text-align: center;
+	}
+
+	.grid-item li{
+		list-style: none;
 	}
 
 	.card:hover {
 		
 	}
 
-	.title {
-		
+		h2 {
+		font-size: var(--text-xlg);
+		text-align: center;
 	}
 
-	
-
 	img {
-		
+		width: auto;
+		height: 2rem;
 	}
 
 	@media (min-width: 50em) {
@@ -91,8 +78,5 @@ main {
 			border-radius: 1.5rem;
 		}
 
-		.title {
-			border-radius: 0.9375rem;
-		}
 	}
 </style>

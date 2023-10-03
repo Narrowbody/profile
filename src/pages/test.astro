@@ -1,5 +1,37 @@
 ---
 import Timeline from "../components/Timeline.astro";
+import ExperiencePreview from "../components/ExperiencePreview.astro";
+
+import { Icon } from "astro-icon";
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import { getCollection } from 'astro:content';
+import ExperienceLogo from "../components/ExperienceLogo.astro";
+import ExperienceHeadline from "../components/ExperienceHeadline.astro";
+
+const experiences = (await getCollection('experience'))
+	.sort((a, b) => b.data.fromDate.valueOf() - a.data.fromDate.valueOf());
 ---
 
-<Timeline />
+
+<BaseLayout>
+    <ExperienceLogo src="/public/assets/logos/delta.jpg" alt="logo"/>
+    <ExperienceHeadline company_title="Delta Air Lines" from="1991" to="2006" position="Manager, Internal Evaluations" />
+<!--     <Timeline />
+    {
+     experiences.map((experience) => (
+      <li>
+       <ExperiencePreview experiences={experience}/>
+       <Icon name="helicopter" width="60" />
+      </li>
+     ))
+    } -->
+</BaseLayout>
+
+
+<style>
+ [astro-icon] {
+  color: var(--accent-regular);
+ }
+</style>

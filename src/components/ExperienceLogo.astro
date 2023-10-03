@@ -1,0 +1,25 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+	//logo: CollectionEntry<'experience'>;
+	src: string;
+	alt: string;
+}
+
+const { src, alt } = Astro.props;
+//const { data } = Astro.props.logo;
+//const { data } = Astro.props;
+---
+
+<img src={ src } alt={ alt }/>
+
+
+<style>
+img {
+ width: 200px;
+ height: auto;
+}
+
+
+</style>

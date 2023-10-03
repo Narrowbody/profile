@@ -1,10 +1,19 @@
 ---
 import CallToAction from './CallToAction.astro';
 import Icon from './Icon.astro';
+
+interface Props {
+	titleForCTA: string;
+}
+
+const { titleForCTA } = Astro.props as Props;
+
 ---
 
 <aside>
-	<h2>Interested in working together?</h2>
+	
+	<h2>{ titleForCTA }</h2>
+	
 	<CallToAction href="mailto:me@example.com">
 		Send Me a Message
 		<Icon icon="paper-plane-tilt" size="1.2em" />
@@ -27,7 +36,7 @@ import Icon from './Icon.astro';
 	h2 {
 		font-size: var(--text-xl);
 		text-align: center;
-		max-width: 15ch;
+		max-width: 35ch;
 	}
 
 	@media (min-width: 50em) {

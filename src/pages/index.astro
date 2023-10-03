@@ -1,4 +1,9 @@
 ---
+//Fetch Image
+import { Image } from 'astro:assets'
+import  leventExternado  from '/src/images/levent-externado-zoomed.jpeg'
+
+// Fetch FrontMatter data
 import { getCollection } from 'astro:content';
 
 // Layout import — provides basic page elements: <head>, <nav>, <footer> etc.
@@ -11,15 +16,26 @@ import Hero from '../components/Hero.astro';
 import Icon from '../components/Icon.astro';
 import Pill from '../components/Pill.astro';
 import PortfolioPreview from '../components/PortfolioPreview.astro';
+import CoursesPreview from '../components/CoursesPreview.astro';
+
 import ExperiencePreview from '../components/ExperiencePreview.astro';
+import ExperienceCard from '../components/ExperienceCard.astro';
+
+//Icon imports
+//import { Icon } from "astro-icon";
 
 // Page section components
 import ContactCTA from '../components/ContactCTA.astro';
 import OperationalAreas from '../components/OperationalAreas.astro';
 import Timeline from '../components/Timeline.astro';
 
-// Content Fetching: List four most recent services
+// Content Fetching: Services - list four most recent services
 const services = (await getCollection('services'))
+	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+	.slice(0, 4);
+
+	// Content Fetchin: Courses - List four most recent courses
+	const courses = (await getCollection('courses'))
 	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
 	.slice(0, 4);
 
@@ -27,26 +43,21 @@ const services = (await getCollection('services'))
 const experiences = (await getCollection('experience'))
 	.sort((a, b) => b.data.fromDate.valueOf() - a.data.fromDate.valueOf());
 
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
-
-
-	const quals = ['Over 35 years experience in aviation safety, risk management, quality, maintenance, and manufacturing', 
+	//Todo - move the data to FrontMatter
+	/* const quals = ['Over 35 years experience in aviation safety, risk management, quality, maintenance, and manufacturing', 
 	'Safety management system, quality, compliance programs development and implementation expertise', 
 	'Broad aircraft maintenance, inspection, production control, front-line, and supervisory experience', 
 	'Comprehensive investigations, auditing, evaluations, root cause analysis, and process measurement skills',
 	'Proficiency in airline documentation, manual management, system development, and implementation',
-	'Broad international background']
+	'Broad international background'] */
 ---
 
 <BaseLayout>
 	<div class="stack gap-20 lg:gap-48">
 		<div class="wrapper stack gap-8 lg:gap-20">
 			<header class="hero">
-
-				<img
-				 src="/assets/levent-externado-zoomed.jpeg"
-					alt="Levent Erdem standing..."
+				<!--Hero Image -->
+				<Image src={ leventExternado } alt="Levent Erdem standing in front of Externado University in Bogota, Colombia"
 					width="480"
 					height="620"
 				/>
@@ -65,19 +76,27 @@ const experiences = (await getCollection('experience'))
 						<a href="/courses/"><Pill><Icon icon="student" size="1.33em" /> Training</Pill></a>
 					</div>
 				</Hero>
-
-				
 			</header>
+
+			<!--Operational Areas -->
 			<OperationalAreas />
+
+			<!--Experience Timeline -->
+									<section class="section with-background bg-variant">
+									<header class="section-header stack gap-2 lg:gap-4">
+												<h3>Experience Timeline</h3>
+									</header>
+									<Timeline />
+									</section>
 		</div>
 
+		<!--Services Highlites -->
 		<main class="wrapper stack gap-20 lg:gap-48">
 			<section class="section with-background with-cta">
 				<header class="section-header stack gap-2 lg:gap-4">
 					<h3>Services</h3>
 					<p>Take a look below at some of the services I provided for my clients from the past few years.</p>
 				</header>
-
 				<div class="gallery">
 					<Grid variant="offset">
 						{
@@ -85,11 +104,12 @@ const experiences = (await getCollection('experience'))
 								<li>
 									<PortfolioPreview services={service} />
 								</li>
-							))
+							)) 
 						}
 					</Grid>
 				</div>
 
+				<!--Services - View All -->
 				<div class="cta">
 					<CallToAction href="/services/">
 						View All
@@ -98,7 +118,37 @@ const experiences = (await getCollection('experience'))
 				</div>
 			</section>
 
-						<section class="section with-background bg-variant">
+					<!--Training Highlites -->
+		<main class="wrapper stack gap-20 lg:gap-48">
+			<section class="section with-background with-cta">
+				<header class="section-header stack gap-2 lg:gap-4">
+					<h3>Training</h3>
+					<p>Take a look below at some of the training I provided for my clients from the past few months.</p>
+				</header>
+				<div class="gallery">
+					<Grid variant="offset">
+						{
+							courses.map((course) => (
+								<li>
+									<CoursesPreview courses={course} />
+								</li>
+							)) 
+						}
+					</Grid>
+				</div>
+
+				<!--Courses - View All -->
+				<div class="cta">
+					<CallToAction href="/courses/">
+						View All
+						<Icon icon="arrow-right" size="1.2em" />
+					</CallToAction>
+				</div>
+			</section>
+
+						<!--Qualifications Section 
+						<ExperienceCard />-->
+						<!-- <section class="section with-background bg-variant">
 							<header class="section-header stack gap-2 lg:gap-4">
 								<h3>Summary of Qualifications</h3>
 								<p>
@@ -108,26 +158,21 @@ const experiences = (await getCollection('experience'))
 							<div class="gallery">
 								<Grid variant="small">
 									{ quals.map((quals) => (
-													<li class="mention-card"> 
-														<h6>{ quals }</h6>
+													<li class="mention-card shadow"> 
+														<p class="text">{ quals }</p>
 													</li>
 										))
 									}
 								</Grid>
 							</div>
-						</section>
-						<section class="section with-background bg-variant">
-							<header class="section-header stack gap-2 lg:gap-4">
-								<h3>Experience Timeline</h3>
-								
-							</header>
-						</section>
+						</section> -->
+						<!--Experience Timeline -->
+
+						
 					</main>
-					<Timeline />
 					
-				<ContactCTA />
+				 <ContactCTA titleForCTA = "Interested in working together?"/>
 			</div>
-			
 </BaseLayout>
 
 <style>
@@ -136,7 +181,6 @@ const experiences = (await getCollection('experience'))
 		width: 100%;
 		display: flex;
 		flex-direction: column;
-		
 	}
 
 	.hero {
@@ -152,10 +196,10 @@ const experiences = (await getCollection('experience'))
 
 	.hero img {
 		aspect-ratio: 5 / 4;
-		object-fit: contain;
+		object-fit: fill;
 		object-position: top;
 		border-radius: 1rem;
-		box-shadow: var(--shadow-md);
+		box-shadow: var(--shadow-lg);
 		filter: grayscale(0%);
 	}
 
@@ -193,7 +237,6 @@ const experiences = (await getCollection('experience'))
 
 	.with-background::before {
 		--hero-bg: var(--bg-image-subtle-2);
-
 		content: '';
 		position: absolute;
 		pointer-events: none;
@@ -250,7 +293,6 @@ const experiences = (await getCollection('experience'))
 		.with-cta .section-header {
 			justify-self: flex-start;
 			text-align: left;
-			
 		}
 
 		.gallery {
@@ -265,8 +307,7 @@ const experiences = (await getCollection('experience'))
 
 	/* ====================================================== */
 
-	.mention-card {
-		display: flex;
+/* .mention-card {
 		height: 9rem;
 		justify-content: center;
 		align-items: center;
@@ -279,10 +320,20 @@ const experiences = (await getCollection('experience'))
 		padding: 1rem;
 	}
 
+	.mention-card .text{
+		font-size: larger;
+	}
+
+	.shadow {
+ box-shadow: inset 0 -2em 2em rgba(0,0,0,0.1),
+             0 0  0 2px rgb(190, 190, 190),
+             0.3em 0.3em 1em rgba(0,0,0,0.3);
+}
+
 	@media (min-width: 50em) {
 		.mention-card {
 			border-radius: 1.5rem;
 			height: 9.5rem;
 		}
-	}
+	} */
 </style>
