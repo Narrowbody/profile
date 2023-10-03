@@ -5,52 +5,228 @@ import { Icon } from 'astro-icon';
 
 
 <div class="ops">
-			<h2>Operational areas I can assist you in;</h2>
-</div>
-<section class="box skills">
-			<div class="stack gap-2 lg:gap-4">
-						<h2><Icon name="airlines-outline" color="var(--accent-regular)" width = "48" /> Airlines</h2>
-						<p>Scheduled and Cargo airlines</p>
+			<h2>Operational areas I can serve in;</h2>
+<section class="container">
+	
+			<div class="card">
+				<div class="image">
+					<img src="/assets/airlines.jpeg" alt="airlines"/>
+				</div>
+				<div class="heading">
+					<Icon name="airplane-clock" color="var(--accent-regular)" width = "32" class="icon"/>
+					<h3 class="title"> Airlines</h3>
+				</div>
+				<div class="description">
+							<ul>
+									<li><p>Scheduled Carriers</p></li>
+									<li><p>Cargo Carriers</p></li>
+						</ul>
 			</div>
-			<div class="stack gap-2 lg:gap-4">
-						<h2>Helicopter Ops.</h2>
-						<p>HEMS, SAR, Fire Fighting</p>
 			</div>
-			<div class="stack gap-2 lg:gap-4">
-						<h2>Aerodromes</h2>
-						<p>Urna porttitor rhoncus dolor purus non enim praesent ornare.</p>
+
+			<div class="card">
+				<div class="image">
+					<img src="/assets/helicopter-ops.jpeg" alt="helicopter operations" />
+				</div>
+				<div class="heading">
+					<Icon name="helicopter" color="var(--accent-regular)" width = "32" class="icon"/>
+					<h2 class="title">Helicopter Ops.</h2>
+				</div>
+				<div class="description">
+							<ul>
+									<li><p>Emergency Medical Services</p></li>
+									<li><p>Search and Rescue</p></li>
+									<li><p>Fire Fighting</p></li>
+						</ul>
 			</div>
-			<div class="stack gap-2 lg:gap-4">
-						<h2> Ground Services</h2>
-						<p>Ground Operations including, Ground Handling, Ground Support Equipment (GSE), Dangerous Goods Handling</p>
 			</div>
-			<div class="stack gap-2 lg:gap-4">
-						<h2> MRO's</h2>
-						<p>Maintenance Repair Organizations - Part M, Part 145, 21G, and 21J operations</p>
+
+			<div class="card">
+				<div class="image"><img src="/assets/airlines.jpeg" alt="airlines" /></div>
+				<div class="heading">
+					<Icon name="scheduled-maintenance" color="var(--accent-regular)" width = "32" class="icon"/>
+					<h2 class="title">MRO's</h2>
+				</div>
+				<div class="description">
+							<ul>
+									<li><p>CAMO/Part M</p></li>
+									<li><p>Part 145</p></li>
+									<li><p>Part 21G</p></li>
+									<li><p>Part 21J</p></li>
+						</ul>
 			</div>
-			<div class="stack gap-2 lg:gap-4">
-						<h2> Military Aviation</h2>
-						<p>Urna porttitor rhoncus dolor purus non enim praesent ornare.</p>
 			</div>
-			<div class="stack gap-2 lg:gap-4">
-						<h2> Autonomous Vehicles</h2>
-						<p>Ground Operations including, Ground Handling, Ground Support Equipment (GSE), Dangerous Goods Handling</p>
+
+			<div class="card">
+				<div class="image"><img src="/assets/airlines.jpeg" alt="airlines" width="100%" /></div>
+				<div class="heading">
+					<Icon name="truck-plane" color="var(--accent-regular)" width = "32" class="icon"/>
+					<h2 class="title">Ground Services</h2>
+				</div>
+				<div class="description">
+							<ul>
+									<li><p>Ground Operations</p></li>
+									<li><p>Ground Handling</p></li>
+									<li><p>Ground Support Equipment</p></li>
+									<li><p>Dangerous Goods Handling</p></li>
+						</ul>
 			</div>
-			<div class="stack gap-2 lg:gap-4">
-						<h2>Training Organizations</h2>
-						<p>ATO's, Part 147 and Part 142 organizations</p>
 			</div>
-			<div class="stack gap-2 lg:gap-4">
-						<h2>M </h2>
-						<p>Urna porttitor rhoncus dolor purus non enim praesent ornare.</p>
+
+			<div class="card">
+				<div class="image"><img src="/assets/airlines.jpeg" alt="airlines" width="100%" /></div>
+				<div class="heading">
+					<Icon name="airport" color="var(--accent-regular)" width = "32" class="icon"/>
+					<h2 class="title">Aerodromes</h2>
+				</div>
+				<div class="description">
+							<ul>
+									<li><p>Domestic airports</p></li>
+									<li><p>International airports</p></li>
+						</ul>
+			</div>
+			</div>
+
+			<div class="card">
+				<div class="image"><img src="/assets/airlines.jpeg" alt="airlines" width="100%" /></div>
+				<div class="heading">
+					<Icon name="i-training-class" color="var(--accent-regular)" width = "32" class="icon"/>
+					<h2 class="title">Training Organizations</h2>
+				</div>
+				<div class="description">
+							<ul>
+									<li><p>ATO's</p></li>
+									<li><p>Part 147 organizations</p></li>
+									<li><p>Part 142 organizations</p></li>
+						</ul>
+			</div>
+			</div>
+
+			<div class="card">
+				<div class="image"><img src="/assets/airlines.jpeg" alt="airlines" width="100%" /></div>
+				<div class="heading">
+					<Icon name="car-autonomous" color="var(--accent-regular)" width = "32" class="icon"/>
+					<h2 class="title">Autonomous Vehicles</h2>
+				</div>
+				<div class="description">
+							<ul>
+									<li><p>Conditional Automation</p></li>
+									<li><p>High Automation</p></li>
+									<li><p>Full Automation</p></li>
+						</ul>
+			</div>
+			</div>
+
+			<div class="card">
+				<div class="image"><img src="/assets/airlines.jpeg" alt="airlines" width="100%" /></div>
+				<div class="heading">
+					<Icon name="fighter-jet" color="var(--accent-regular)" width = "32" class="icon"/>
+					<h2 class="title">Military Aviation</h2>
+				</div>
+				<div class="description">
+							<ul>
+									<li><p>Army</p></li>
+									<li><p>Navy</p></li>
+									<li><p>Air Force</p></li>
+						</ul>
+			</div>
+			</div>
+
+			<div class="card">
+				<div class="image"><img src="/assets/airlines.jpeg" alt="airlines" width="100%" /></div>
+				<div class="heading">
+					<Icon name="airline-digital-gate" color="var(--accent-regular)" width = "32" class="icon"/>
+					<h2 class="title">Charter Operations</h2>
+				</div>
+				<div class="description">
+							<ul>
+									<li><p>Scheduled</p></li>
+									<li><p>Unscheduled</p></li>
+						</ul>
+			</div>
 			</div>
 </section>
+</div>
 
 
 <style>
+	.ops {
+		display: grid;
+  justify-content: space-evenly;
+		align-content: center;
+		padding: 3rem;
+		
+	}
+
+	.title {
+		font-size: var(--text-xl);
+		
+	}
+
+	.container {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-items: center;
+		gap: 3rem;
+		padding-top: 3rem;
+		
+	}
+	h3 {
+		font-size: var(--text-xl);
+	}
+
+	p {
+		color: var(--gray-400);
+	}
+
+	.card {
+		width: 300px;
+		min-height: 300px;
+		flex-direction: column;
+		border: 1px solid var(--gray-800);
+		border-radius: 10px;
+		border-top-right-radius: 0;
+		border-top-left-radius: 0;
+		padding: 0;
+		background-color: var(--gray-999_40);
+		box-shadow: var(--shadow-md);
+		
+	}
+
+	.image {
+		
+  
+		object-fit: cover;
+		background-color: blueviolet;
+	}
+
+	.heading {
+		display: flex;
+		padding: .5rem;
+		
+	}
+
+	.heading .title {
+		margin-left: .5rem;
+		
+	}
 
 	[astro-icon]{
 		color: var(--accent-regular);
+		
+	}
+
+	.description {
+		padding: 0;
+		position: relative;
+
+	}
+
+ .description ul {
+		color: var(--gray-500);
+		padding-left: 1.5rem;
+		padding-bottom: 1rem;
 	}
 
 	.box {
@@ -61,19 +237,9 @@ import { Icon } from 'astro-icon';
 		box-shadow: var(--shadow-md);
 	}
 
-	.skills {
-		display: flex;
-		flex-direction: column;
-		gap: 3rem;
-	}
 
-	.skills h2 {
-		font-size: var(--text-xl);
-	}
 
-	.skills p {
-		color: var(--gray-400);
-	}
+
 
 	@media (min-width: 50em) {
 		.box {

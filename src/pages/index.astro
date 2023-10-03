@@ -44,12 +44,12 @@ const experiences = (await getCollection('experience'))
 	.sort((a, b) => b.data.fromDate.valueOf() - a.data.fromDate.valueOf());
 
 	//Todo - move the data to FrontMatter
-	/* const quals = ['Over 35 years experience in aviation safety, risk management, quality, maintenance, and manufacturing', 
+	const quals = ['Over 35 years experience in aviation safety, risk management, quality, maintenance, and manufacturing', 
 	'Safety management system, quality, compliance programs development and implementation expertise', 
 	'Broad aircraft maintenance, inspection, production control, front-line, and supervisory experience', 
 	'Comprehensive investigations, auditing, evaluations, root cause analysis, and process measurement skills',
 	'Proficiency in airline documentation, manual management, system development, and implementation',
-	'Broad international background'] */
+	'Broad international background'] 
 ---
 
 <BaseLayout>
@@ -65,7 +65,7 @@ const experiences = (await getCollection('experience'))
 
 				<Hero
 					title="Hello, I'm Levent"
-					tagline="I am an Aviation Safety/ Accident Prevention Consultant and Educator."
+					tagline="I am an Aviation Safety and Accident Prevention Consultant and Educator."
 					sub="I can assist you by;"
 					align="start"
 				>
@@ -81,13 +81,27 @@ const experiences = (await getCollection('experience'))
 			<!--Operational Areas -->
 			<OperationalAreas />
 
-			<!--Experience Timeline -->
-									<section class="section with-background bg-variant">
-									<header class="section-header stack gap-2 lg:gap-4">
-												<h3>Experience Timeline</h3>
-									</header>
-									<Timeline />
-									</section>
+
+<!-- 						<section class="section with-background bg-variant">
+							<header class="section-header stack gap-2 lg:gap-4">
+								<h3>Summary of Qualifications</h3>
+								<p>
+									I have been fortunate to acquire the following qualifications throughout my extensive aviation career.
+								</p>
+							</header>
+							<div class="gallery">
+								<Grid variant="small">
+									{ quals.map((quals) => (
+													<li class="mention-card shadow"> 
+														<p class="text">{ quals }</p>
+													</li>
+										))
+									}
+								</Grid>
+							</div>
+						</section>  -->
+
+
 		</div>
 
 		<!--Services Highlites -->
@@ -118,6 +132,9 @@ const experiences = (await getCollection('experience'))
 				</div>
 			</section>
 
+												<!--Qualifications Section--> 
+						<ExperienceCard />
+
 					<!--Training Highlites -->
 		<main class="wrapper stack gap-20 lg:gap-48">
 			<section class="section with-background with-cta">
@@ -146,28 +163,14 @@ const experiences = (await getCollection('experience'))
 				</div>
 			</section>
 
-						<!--Qualifications Section 
-						<ExperienceCard />-->
-						<!-- <section class="section with-background bg-variant">
-							<header class="section-header stack gap-2 lg:gap-4">
-								<h3>Summary of Qualifications</h3>
-								<p>
-									I have been fortunate to acquire the following qualifications throughout my extensive aviation career.
-								</p>
-							</header>
-							<div class="gallery">
-								<Grid variant="small">
-									{ quals.map((quals) => (
-													<li class="mention-card shadow"> 
-														<p class="text">{ quals }</p>
-													</li>
-										))
-									}
-								</Grid>
-							</div>
-						</section> -->
-						<!--Experience Timeline -->
 
+									<!--Experience Timeline -->
+									<section class="section with-background bg-variant">
+									<header class="section-header stack gap-2 lg:gap-4">
+												<h3>Experience Timeline</h3>
+									</header>
+									<Timeline />
+									</section>
 						
 					</main>
 					
