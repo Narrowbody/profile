@@ -12,26 +12,23 @@ const quals = ['Over 35 years experience in aviation safety, risk management, qu
 
 
 <section class="section with-background bg-variant">
-							<header class="section-header stack gap-2 lg:gap-4">
-								<h3>Summary of Qualifications</h3>
-								<p>
-									I have been fortunate to acquire the following qualifications throughout my extensive aviation career.
-								</p>
-							</header>
-							<div class="gallery">
-								<Grid variant="small">
-									{ quals.map((quals) => (
-													<li class="box">
-														<h6>{ quals }</h6>
-													</li>
-										))
-									}
-								</Grid>
-							</div>
-						</section>
-
-
-
+	<header class="section-header stack gap-2 lg:gap-4">
+		<h3>Summary of Qualifications</h3>
+		<p>
+			I have been fortunate to acquire the following qualifications throughout my extensive aviation career.
+		</p>
+	</header>
+	<div class="gallery">
+		<Grid variant="small">
+			{ quals.map((quals) => (
+			<li class="box">
+				<h6>{ quals }</h6>
+			</li>
+			))
+			}
+		</Grid>
+	</div>
+</section>
 
 
 <style>
@@ -60,6 +57,11 @@ const quals = ['Over 35 years experience in aviation safety, risk management, qu
 		background-color: var(--gray-999_40);
 		box-shadow: var(--shadow-md);
 	}
+
+.box:hover {
+	transform: scale(1.05);
+	transition: transform 0.2s ease-in-out;
+}
 
 	@media (min-width: 50em) {
 		.mention-card {

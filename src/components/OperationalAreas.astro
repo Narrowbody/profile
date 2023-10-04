@@ -1,165 +1,224 @@
 ---
 //import Icon from './Icon.astro';
 import { Icon } from 'astro-icon';
+
 ---
 
 
 <div class="ops">
-			<h2>Operational areas I can serve in;</h2>
-<section class="container">
-	
-			<div class="card">
-				<div class="image">
-					<img src="/assets/airlines.jpeg" alt="airlines"/>
-				</div>
+	<h2>Operational areas I can serve you in;</h2>
+	<section class="container">
+		<div class="card hidden">
+			<img src="/assets/tails.jpg" alt="airlines" />
+			<div class="text-container">
 				<div class="heading">
-					<Icon name="airplane-clock" color="var(--accent-regular)" width = "32" class="icon"/>
+					<Icon name="airplane-clock" color="var(--accent-regular)" width="32" class="icon" />
 					<h3 class="title"> Airlines</h3>
 				</div>
 				<div class="description">
-							<ul>
-									<li><p>Scheduled Carriers</p></li>
-									<li><p>Cargo Carriers</p></li>
-						</ul>
-			</div>
-			</div>
-
-			<div class="card">
-				<div class="image">
-					<img src="/assets/helicopter-ops.jpeg" alt="helicopter operations" />
+					<ul>
+						<li>
+							<p>Scheduled Carriers</p>
+						</li>
+						<li>
+							<p>Cargo Carriers</p>
+						</li>
+					</ul>
 				</div>
-				<div class="heading">
-					<Icon name="helicopter" color="var(--accent-regular)" width = "32" class="icon"/>
-					<h2 class="title">Helicopter Ops.</h2>
-				</div>
-				<div class="description">
-							<ul>
-									<li><p>Emergency Medical Services</p></li>
-									<li><p>Search and Rescue</p></li>
-									<li><p>Fire Fighting</p></li>
-						</ul>
 			</div>
-			</div>
-
-			<div class="card">
-				<div class="image"><img src="/assets/airlines.jpeg" alt="airlines" /></div>
+		</div>
+		<div class="card hidden">
+			<img src="/assets/helicopter-ops.jpeg" alt="helicopter operations" />
+			<div class="text-container">
 				<div class="heading">
-					<Icon name="scheduled-maintenance" color="var(--accent-regular)" width = "32" class="icon"/>
-					<h2 class="title">MRO's</h2>
+					<Icon name="helicopter" color="var(--accent-regular)" width="32" class="icon" />
+					<h2 class="title">Helicopter Operations</h2>
 				</div>
 				<div class="description">
-							<ul>
-									<li><p>CAMO/Part M</p></li>
-									<li><p>Part 145</p></li>
-									<li><p>Part 21G</p></li>
-									<li><p>Part 21J</p></li>
-						</ul>
+					<ul>
+						<li>
+							<p>Emergency Medical Services</p>
+						</li>
+						<li>
+							<p>Search and Rescue</p>
+						</li>
+						<li>
+							<p>Fire Fighting</p>
+						</li>
+					</ul>
+				</div>
 			</div>
-			</div>
-
-			<div class="card">
-				<div class="image"><img src="/assets/airlines.jpeg" alt="airlines" width="100%" /></div>
+		</div>
+		<div class="card hidden">
+			<img src="/assets/mro.webp" alt="airlines" />
+			<div class="text-container">
 				<div class="heading">
-					<Icon name="truck-plane" color="var(--accent-regular)" width = "32" class="icon"/>
+					<Icon name="scheduled-maintenance" color="var(--accent-regular)" width="32" class="icon" />
+					<h2 class="title">Maintenance Repair Orgs.</h2>
+				</div>
+				<div class="description">
+					<ul>
+						<li>
+							<p>CAMO/Part M</p>
+						</li>
+						<li>
+							<p>Part 145</p>
+						</li>
+						<li>
+							<p>Part 21G</p>
+						</li>
+						<li>
+							<p>Part 21J</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="card hidden">
+			<img src="/assets/ground.jpeg" alt="airlines" width="100%" />
+			<div class="text-container">
+				<div class="heading">
+					<Icon name="truck-plane" color="var(--accent-regular)" width="32" class="icon" />
 					<h2 class="title">Ground Services</h2>
 				</div>
 				<div class="description">
-							<ul>
-									<li><p>Ground Operations</p></li>
-									<li><p>Ground Handling</p></li>
-									<li><p>Ground Support Equipment</p></li>
-									<li><p>Dangerous Goods Handling</p></li>
-						</ul>
+					<ul>
+						<li>
+							<p>Ground Operations</p>
+						</li>
+						<li>
+							<p>Ground Handling</p>
+						</li>
+						<li>
+							<p>Ground Support Equipment</p>
+						</li>
+						<li>
+							<p>Dangerous Goods Handling</p>
+						</li>
+					</ul>
+				</div>
 			</div>
-			</div>
-
-			<div class="card">
-				<div class="image"><img src="/assets/airlines.jpeg" alt="airlines" width="100%" /></div>
+		</div>
+		<div class="card hidden">
+			<img src="/assets/airport.jpg" alt="airlines" width="100%" />
+			<div class="text-container">
 				<div class="heading">
-					<Icon name="airport" color="var(--accent-regular)" width = "32" class="icon"/>
-					<h2 class="title">Aerodromes</h2>
+					<Icon name="airport" color="var(--accent-regular)" width="32" class="icon" />
+					<h2 class="title">Airports & Aerodromes</h2>
 				</div>
 				<div class="description">
-							<ul>
-									<li><p>Domestic airports</p></li>
-									<li><p>International airports</p></li>
-						</ul>
+					<ul>
+						<li>
+							<p>Domestic airports</p>
+						</li>
+						<li>
+							<p>International airports</p>
+						</li>
+					</ul>
+				</div>
 			</div>
-			</div>
-
-			<div class="card">
-				<div class="image"><img src="/assets/airlines.jpeg" alt="airlines" width="100%" /></div>
+		</div>
+		<div class="card hidden">
+			<img src="/assets/ato.jpeg" alt="airlines" width="100%" />
+			<div class="text-container">
 				<div class="heading">
-					<Icon name="i-training-class" color="var(--accent-regular)" width = "32" class="icon"/>
-					<h2 class="title">Training Organizations</h2>
+					<Icon name="i-training-class" color="var(--accent-regular)" width="32" class="icon" />
+					<h2 class="title">Training Orgs.</h2>
 				</div>
 				<div class="description">
-							<ul>
-									<li><p>ATO's</p></li>
-									<li><p>Part 147 organizations</p></li>
-									<li><p>Part 142 organizations</p></li>
-						</ul>
+					<ul>
+						<li>
+							<p>ATO's</p>
+						</li>
+						<li>
+							<p>Part 147 organizations</p>
+						</li>
+						<li>
+							<p>Part 142 organizations</p>
+						</li>
+					</ul>
+				</div>
 			</div>
-			</div>
-
-			<div class="card">
-				<div class="image"><img src="/assets/airlines.jpeg" alt="airlines" width="100%" /></div>
+		</div>
+		<div class="card hidden">
+			<img src="/assets/av.jpg" alt="airlines" width="100%" />
+			<div class="text-container">
 				<div class="heading">
-					<Icon name="car-autonomous" color="var(--accent-regular)" width = "32" class="icon"/>
+					<Icon name="car-autonomous" color="var(--accent-regular)" width="32" class="icon" />
 					<h2 class="title">Autonomous Vehicles</h2>
 				</div>
 				<div class="description">
-							<ul>
-									<li><p>Conditional Automation</p></li>
-									<li><p>High Automation</p></li>
-									<li><p>Full Automation</p></li>
-						</ul>
+					<ul>
+						<li>
+							<p>Conditional Automation</p>
+						</li>
+						<li>
+							<p>High Automation</p>
+						</li>
+						<li>
+							<p>Full Automation</p>
+						</li>
+					</ul>
+				</div>
 			</div>
-			</div>
-
-			<div class="card">
-				<div class="image"><img src="/assets/airlines.jpeg" alt="airlines" width="100%" /></div>
+		</div>
+		<div class="card hidden">
+			<img src="/assets/military.jpg" alt="airlines" width="100%" />
+			<div class="text-container">
 				<div class="heading">
-					<Icon name="fighter-jet" color="var(--accent-regular)" width = "32" class="icon"/>
+					<Icon name="fighter-jet" color="var(--accent-regular)" width="32" class="icon" />
 					<h2 class="title">Military Aviation</h2>
 				</div>
 				<div class="description">
-							<ul>
-									<li><p>Army</p></li>
-									<li><p>Navy</p></li>
-									<li><p>Air Force</p></li>
-						</ul>
+					<ul>
+						<li>
+							<p>Army</p>
+						</li>
+						<li>
+							<p>Navy</p>
+						</li>
+						<li>
+							<p>Air Force</p>
+						</li>
+					</ul>
+				</div>
 			</div>
-			</div>
-
-			<div class="card">
-				<div class="image"><img src="/assets/airlines.jpeg" alt="airlines" width="100%" /></div>
+		</div>
+		<div class="card hidden">
+			<img src="/assets/charter.jpg" alt="airlines" width="100%" />
+			<div class="text-container">
 				<div class="heading">
-					<Icon name="airline-digital-gate" color="var(--accent-regular)" width = "32" class="icon"/>
+					<Icon name="airline-digital-gate" color="var(--accent-regular)" width="32" class="icon" />
 					<h2 class="title">Charter Operations</h2>
 				</div>
 				<div class="description">
-							<ul>
-									<li><p>Scheduled</p></li>
-									<li><p>Unscheduled</p></li>
-						</ul>
+					<ul>
+						<li>
+							<p>Scheduled</p>
+						</li>
+						<li>
+							<p>Unscheduled</p>
+						</li>
+					</ul>
+				</div>
 			</div>
-			</div>
-</section>
+		</div>
+	</section>
 </div>
 
+<script src="../scripts/animate-scroll.js"/>
 
 <style>
 	.ops {
 		display: grid;
-  justify-content: space-evenly;
+  		justify-content: space-evenly;
 		align-content: center;
 		padding: 3rem;
 		
 	}
 
 	.title {
-		font-size: var(--text-xl);
+		font-size: var(--text-lg);
 		
 	}
 
@@ -178,32 +237,33 @@ import { Icon } from 'astro-icon';
 
 	p {
 		color: var(--gray-400);
+		font-size: var(--text-md);
 	}
 
 	.card {
-		width: 300px;
-		min-height: 300px;
-		flex-direction: column;
+		width: 325px;
+		height: 350px;
 		border: 1px solid var(--gray-800);
 		border-radius: 10px;
-		border-top-right-radius: 0;
-		border-top-left-radius: 0;
-		padding: 0;
+		overflow: hidden;
 		background-color: var(--gray-999_40);
 		box-shadow: var(--shadow-md);
-		
 	}
 
-	.image {
-		
-  
+	.card img {
+		width: 100%;
+		height: 100%;
+		max-height: 150px;
 		object-fit: cover;
-		background-color: blueviolet;
+	}
+
+	.text-container {
+		padding: 0 .4rem 0 .4rem;
 	}
 
 	.heading {
 		display: flex;
-		padding: .5rem;
+		padding: .8rem;
 		
 	}
 
@@ -218,9 +278,7 @@ import { Icon } from 'astro-icon';
 	}
 
 	.description {
-		padding: 0;
-		position: relative;
-
+		padding-left: 0.3rem;
 	}
 
  .description ul {
@@ -237,7 +295,19 @@ import { Icon } from 'astro-icon';
 		box-shadow: var(--shadow-md);
 	}
 
+	.card:hover {
+		transform: scale(1.05);
+		transition: transform 0.2s ease-in-out;
+	}
 
+	.hidden {
+		opacity: 0;
+		transition: all 10s;
+	}
+
+	.show {
+		opacity: 1;
+	}
 
 
 
@@ -258,3 +328,8 @@ import { Icon } from 'astro-icon';
 		}
 	}
 </style>
+
+
+<!-- 
+	Small Arrow to be used with a Card like in Timeline
+	<div style="width: 33px;"><svg width="33" height="12" viewBox="0 0 33 12.5" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: absolute; transform: translate3d(302.5px, 0px, 0px) rotate(0deg); left: 0px; bottom: -12px;"><path d="M0.5 3.41877e-07C3.5 3.41877e-07 29.5 3.41877e-07 32.5 3.41877e-07C28.5 3.41877e-07 26.4111 0.903505 24.1814 3.69994L17.5562 11.4728C16.957 12.1757 15.8652 12.1757 15.2661 11.4728L8.64084 3.69994C6.41113 0.903505 4.5 3.41877e-07 0.5 3.41877e-07Z" fill="var(--base-surface-secondary-default)"></path></svg></div> -->
