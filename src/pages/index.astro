@@ -28,6 +28,7 @@ import ExperienceCard from '../components/ExperienceCard.astro';
 import ContactCTA from '../components/ContactCTA.astro';
 import OperationalAreas from '../components/OperationalAreas.astro';
 import Timeline from '../components/Timeline.astro';
+import ExperienceTimeline from '../components/ExperienceTimeline.astro';
 
 // Content Fetching: Services - list four most recent services
 const services = (await getCollection('services'))
@@ -132,10 +133,10 @@ const experiences = (await getCollection('experience'))
 				</div>
 			</section>
 
-												<!--Qualifications Section--> 
-						<ExperienceCard />
+		<!--Qualifications Section--> 				
+		<ExperienceCard />
 
-					<!--Training Highlites -->
+		<!--Training Highlites -->
 		<main class="wrapper stack gap-20 lg:gap-48">
 			<section class="section with-background with-cta">
 				<header class="section-header stack gap-2 lg:gap-4">
@@ -168,14 +169,16 @@ const experiences = (await getCollection('experience'))
 				<header class="section-header stack gap-2 lg:gap-4">
 					<h3>Experience Timeline</h3>
 				</header>
-				<Timeline />
+			
 			</section>
-						
 					</main>
-					
+			<!-- <Timeline /> -->
+				<ExperienceTimeline />		
 				 <ContactCTA titleForCTA = "Interested in working together?"/>
 			</div>
 </BaseLayout>
+
+
 
 <style>
 

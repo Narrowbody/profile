@@ -5,21 +5,23 @@ date: 2023-09-11T14:24:04.244Z
 preview: ''
 draft: false
 tags:
-  - Flight Ops.
-  - Maintenance
-  - In-flight
-  - Ground Ops.
+    - Flight Ops.
+    - Maintenance
+    - In-flight
+    - Ground Ops.
 categories:
-  - Airlines
-  - Helicopter Ops.
-  - MRO
-  - Airports
+    - Airlines
+    - Helicopter Ops.
+    - MRO
+    - Airports
+AssistanceCategory:
+    - assess
 publishDate: 2023-09-11T14:24:04.244Z
 img: '/assets/safety culture survey.avif'
 img_alt: 'safety culture survey for aviation companies'
 slug: safety-culture-survey
 keywords:
-  - Safety Culture Survey
+    - Safety Culture Survey
 ---
 
 ... It aims to measure employees' perceptions, attitudes, and behaviors related to safety practices and principles. Here's what it's used for:

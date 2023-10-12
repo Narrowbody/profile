@@ -11,116 +11,116 @@ const experiences = (await getCollection('experience'))
 const { data } = Astro.props;
 ---
 
-		<!-- {
-								/* experiences.map((experience) => (
-									<main>
-										<div class="w3-card-4" style="width:75%">
-											<div class="w3-ul grid-container-main card"> 
-													<li class="hidden">
-														<div class="grid-container">
-																	<div class="grid-item-left">
-																		<img src={experience.data.logo} alt="" class="logo"/>
-																	</div>
-																	
-																	<div class="grid-item-right">
-																		<h5 class="w3-row w3-left-align"> {experience.data.company}</h5>
-																		<h6 class="w3-row w3-left-align">{ experience.data.location }</h6>
-																		<div class="w3-row w3-left-align"><p>{experience.data.position}</p> 
-																		<div class=" w3-left-align"><p>
-																			{experience.data.fromDate.toLocaleDateString(undefined, {
-																				month: "short"
-																			})}, 
-																			{experience.data.fromDate.getFullYear()}
-																			to 
-																			{experience.data.toDate.toLocaleDateString(undefined, {
-																				month: "short"
-																			})}, 
-																			{experience.data.toDate.getFullYear()}
-																			</p>
-																		</div>
-																		</div>
-																	</div>
-														</div>			
-													</li>
-												</div>
-										</div>
-									</main>
-								)) */
-								} -->
-
-								<div class="gallery">
-				     <Grid variant="offset">
-										{
-												experiences.map((experience) => (
-												<li>
-														<ExperiencePreview experiences={ experience } />
-												</li>
-												))
-										}
-									</Grid>
+<!-- {
+/* experiences.map((experience) => (
+<main>
+	<div class="w3-card-4" style="width:75%">
+		<div class="w3-ul grid-container-main card"> 
+				<li class="hidden">
+					<div class="grid-container">
+								<div class="grid-item-left">
+									<img src={experience.data.logo} alt="" class="logo"/>
 								</div>
-
-							 
-							<!-- <div class="timeline main">
-												<div class="container left-container hidden">
-														<img src="/assets/logos/tai180x100.png" class="logo-container tai">
-															<div class="text-box">
-																<h2></h2>
-																<small></small>
-																<p></p>
-														<span class="left-container-arrow"></span>
-												</div>
-								</div>
-
-								<div class="container right-container hidden">
-									<img src="/assets/logos/panam101x100.png" class="logo-container panam">
-									<div class="text-box">
-										<h2></h2>
-										<small></p>
-										<span class="right-container-arrow"></span>
+								
+								<div class="grid-item-right">
+									<h5 class="w3-row w3-left-align"> {experience.data.company}</h5>
+									<h6 class="w3-row w3-left-align">{ experience.data.location }</h6>
+									<div class="w3-row w3-left-align"><p>{experience.data.position}</p> 
+									<div class=" w3-left-align"><p>
+										{experience.data.fromDate.toLocaleDateString(undefined, {
+											month:"short"
+										})}, 
+										{experience.data.fromDate.getFullYear()}
+										to 
+										{experience.data.toDate.toLocaleDateString(undefined, {
+											month: "short"
+										})}, 
+										{experience.data.toDate.getFullYear()}
+										</p>
+									</div>
 									</div>
 								</div>
+					</div>			
+				</li>
+			</div>
+	</div>
+</main>
+)) */
+} -->
 
-								<div class="container left-container hidden">
-									<img src="/assets/logos/delta657x100.png" class="logo-container">
-									<div class="text-box">
-										<h2>Company C</h2>
-										<small>2020-2021</small>
-										<p></p>
-										<span class="left-container-arrow"></span>
-									</div>
-								</div>
+<div class="gallery">
+	<Grid variant="offset">
+		{
+		experiences.map((experience) => (
+		<li>
+			<ExperiencePreview experiences={ experience } />
+		</li>
+		))
+		}
+	</Grid>
+</div>
 
-								<div class="container right-container hidden">
-									<img src="/assets/logos/jetblue298x100.png" class="logo-container jetblue">
-									<div class="text-box">
-										<h2>Company D</h2>
-										<small>2021-2022</small>
-										<p></p>
-										<span class="right-container-arrow"></span>
-									</div>
-								</div>
+	
+<!-- <div class="timeline main">
+					<div class="container left-container hidden">
+							<img src="/assets/logos/tai180x100.png" class="logo-container tai">
+								<div class="text-box">
+									<h2></h2>
+									<small></small>
+									<p></p>
+							<span class="left-container-arrow"></span>
+					</div>
+	</div>
 
-								<div class="container left-container hidden">
-									<img src="/assets/logos/marsh665x100.png" class="logo-container">
-									<div class="text-box">
-										<h2>Company E</h2>
-										<small>2020-2021</small>
-										<p></p>
-										<span class="left-container-arrow"></span>
-									</div>
-								</div>
+	<div class="container right-container hidden">
+		<img src="/assets/logos/panam101x100.png" class="logo-container panam">
+		<div class="text-box">
+			<h2></h2>
+			<small></p>
+			<span class="right-container-arrow"></span>
+		</div>
+	</div>
 
-								<div class="container right-container hidden">
-									<img src="/assets/logos/world100x100.jpeg" class="logo-container world">
-									<div class="text-box">
-										<h2>Company F</h2>
-										<small>2021-2022</small>
-										<p></p>
-										<span class="right-container-arrow"></span>
-									</div>
-								</div>
-							</div> -->
+	<div class="container left-container hidden">
+		<img src="/assets/logos/delta657x100.png" class="logo-container">
+		<div class="text-box">
+			<h2>Company C</h2>
+			<small>2020-2021</small>
+			<p></p>
+			<span class="left-container-arrow"></span>
+		</div>
+	</div>
+
+	<div class="container right-container hidden">
+		<img src="/assets/logos/jetblue298x100.png" class="logo-container jetblue">
+		<div class="text-box">
+			<h2>Company D</h2>
+			<small>2021-2022</small>
+			<p></p>
+			<span class="right-container-arrow"></span>
+		</div>
+	</div>
+
+	<div class="container left-container hidden">
+		<img src="/assets/logos/marsh665x100.png" class="logo-container">
+		<div class="text-box">
+			<h2>Company E</h2>
+			<small>2020-2021</small>
+			<p></p>
+			<span class="left-container-arrow"></span>
+		</div>
+	</div>
+
+	<div class="container right-container hidden">
+		<img src="/assets/logos/world100x100.jpeg" class="logo-container world">
+		<div class="text-box">
+			<h2>Company F</h2>
+			<small>2021-2022</small>
+			<p></p>
+			<span class="right-container-arrow"></span>
+		</div>
+	</div>
+</div> -->
 							
 							
 							
