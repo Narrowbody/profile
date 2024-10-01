@@ -20,16 +20,17 @@ import CoursesPreview from '../components/CoursesPreview.astro';
 
 import ExperiencePreview from '../components/ExperiencePreview.astro';
 import ExperienceCard from '../components/ExperienceCard.astro';
+import OperationalAreas from '../components/OperationalAreas.astro';
 
 //Icon imports
 //import { Icon } from "astro-icon";
 
 // Page section components
 import ContactCTA from '../components/ContactCTA.astro';
-import OperationalAreas from '../components/OperationalAreas.astro';
+
 import Timeline from '../components/Timeline.astro';
 import ExperienceTimeline from '../components/ExperienceTimeline.astro';
-
+import Experience from '../components/Experience.astro';
 // Content Fetching: Services - list four most recent services
 const services = (await getCollection('services'))
 	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
@@ -51,6 +52,8 @@ const experiences = (await getCollection('experience'))
 	'Comprehensive investigations, auditing, evaluations, root cause analysis, and process measurement skills',
 	'Proficiency in airline documentation, manual management, system development, and implementation',
 	'Broad international background'] 
+
+	
 ---
 
 <BaseLayout>
@@ -66,7 +69,7 @@ const experiences = (await getCollection('experience'))
 
 				<Hero
 					title="Hello, I'm Levent"
-					tagline="I am an Aviation Safety and Accident Prevention Consultant and Educator."
+					tagline="I am an Aviation Safety/Accident Prevention Consultant and Educator"
 					sub="I can assist you by;"
 					align="start"
 				>
@@ -169,12 +172,18 @@ const experiences = (await getCollection('experience'))
 				<header class="section-header stack gap-2 lg:gap-4">
 					<h3>Experience Timeline</h3>
 				</header>
-			
-			</section>
-					</main>
+				
+				</section>
 			<!-- <Timeline /> -->
-				<ExperienceTimeline />		
+				<Experience />	
+			
+					
+				
+
+			<!--Contact Me -->	
 				 <ContactCTA titleForCTA = "Interested in working together?"/>
+			
+			</main>
 			</div>
 </BaseLayout>
 
@@ -283,7 +292,7 @@ const experiences = (await getCollection('experience'))
 		.section {
 			grid-template-columns: repeat(4, 1fr);
 			grid-template-areas: 'header header header header' 'gallery gallery gallery gallery';
-			gap: 5rem;
+			gap: 4rem;
 		}
 
 		.section.with-cta {

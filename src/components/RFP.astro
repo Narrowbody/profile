@@ -1,17 +1,63 @@
 ---
+if (Astro.request.method === "POST") {
+  try {
+    const data = await Astro.request.formData();
+    const fullName = data.get("fullName");
+    const email = data.get("email");
 
+    // Do something with the data
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message);
+    }
+  }
+}
 ---
 
-<form>
- <input type="text" id="fullName" name="fullName" placeholder="full name"/><br/>
- <input type="email" id="email" name="email" placeholder="email"/><br/>
- <input type="button" value="Submit" class="menu-button"/>
+<div class="form">
+	<form method="POST">
+		<input type="text" id="fullName" name="fullName" placeholder="full name"/><br/>
+		<input type="email" id="email" name="email" placeholder="email"/><br/>
+		<input type="button" value="Submit" class="menu-button"/>
+	</form>
+</div>
+
+
+<form class="w-full max-w-lg">
+  <div class="flex flex-wrap -mx-3 mb-6">
+    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+      <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-full-name" type="text" placeholder="Full name">
+      <p class="text-red-500 text-xs italic">Please fill out this field.</p>
+    </div>
+
+  </div>
+  <div class="flex flex-wrap -mx-3 mb-6">
+    <div class="w-full px-3">
+      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+        Password
+      </label>
+      <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="password" placeholder="******************">
+      <p class="text-gray-600 text-xs italic">Make it as long and as crazy as you'd like</p>
+    </div>
+  </div>
+  <div class="flex flex-wrap -mx-3 mb-2">
+    
+  </div>
 </form>
 
+
 <style>
+	.form{
+		display: grid;
+		border: solid, 1px;
+		border-color: aqua;
+		margin: 2rem;
+		border: 2rem;
+	}
+
  #email, #fullName{
   padding: 5px;
-  width: 600px;
+  width: 30rem;
   border-radius: 5px;border-color: darkgray;
   border-style: solid;
   margin-right: 5px;
@@ -23,7 +69,7 @@
 
  	.menu-button {
 		position: relative;
-		display: flex;
+		display: grid;
 		border: 0;
 		border-radius: 999rem;
 		padding: 0.5rem;
@@ -44,7 +90,7 @@
 	}
 
 	.menu-button::before {
-		position: absolute;
+		position: relative;
 		inset: -1px;
 		content: '';
 		background: var(--gradient-stroke);

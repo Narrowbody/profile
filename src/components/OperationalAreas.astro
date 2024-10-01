@@ -1,6 +1,6 @@
 ---
 //import Icon from './Icon.astro';
-import { Icon } from 'astro-icon';
+import { Icon } from 'astro-icon/components';
 
 ---
 
@@ -8,12 +8,12 @@ import { Icon } from 'astro-icon';
 <div class="ops">
 	<h2>Operational areas I can serve you in;</h2>
 	<section class="container">
-		<div class="card hidden">
+		<div class="card show">
 			<img src="/assets/tails.jpg" alt="airlines" />
 			<div class="text-container">
 				<div class="heading">
-					<Icon name="airplane-clock" color="var(--accent-regular)" width="32" class="icon" />
-					<h3 class="title"> Airlines</h3>
+					<Icon name="airplane-clock"/>
+					<h3 class="title">Airlines</h3>
 				</div>
 				<div class="description">
 					<ul>
@@ -27,11 +27,11 @@ import { Icon } from 'astro-icon';
 				</div>
 			</div>
 		</div>
-		<div class="card hidden">
+		<div class="card show">
 			<img src="/assets/helicopter-ops.jpeg" alt="helicopter operations" />
 			<div class="text-container">
 				<div class="heading">
-					<Icon name="helicopter" color="var(--accent-regular)" width="32" class="icon" />
+					<Icon name="helicopter"/>
 					<h2 class="title">Helicopter Operations</h2>
 				</div>
 				<div class="description">
@@ -49,12 +49,12 @@ import { Icon } from 'astro-icon';
 				</div>
 			</div>
 		</div>
-		<div class="card hidden">
+		<div class="card show">
 			<img src="/assets/mro.webp" alt="airlines" />
 			<div class="text-container">
 				<div class="heading">
-					<Icon name="scheduled-maintenance" color="var(--accent-regular)" width="32" class="icon" />
-					<h2 class="title">Maintenance Repair Orgs.</h2>
+					<Icon name="scheduled-maintenance"/>
+					<h2 class="title">MRO's</h2>
 				</div>
 				<div class="description">
 					<ul>
@@ -74,11 +74,11 @@ import { Icon } from 'astro-icon';
 				</div>
 			</div>
 		</div>
-		<div class="card hidden">
+		<div class="card show">
 			<img src="/assets/ground.jpeg" alt="airlines" width="100%" />
 			<div class="text-container">
 				<div class="heading">
-					<Icon name="truck-plane" color="var(--accent-regular)" width="32" class="icon" />
+					<Icon name="truck-plane"/>
 					<h2 class="title">Ground Services</h2>
 				</div>
 				<div class="description">
@@ -99,11 +99,11 @@ import { Icon } from 'astro-icon';
 				</div>
 			</div>
 		</div>
-		<div class="card hidden">
+		<div class="card show">
 			<img src="/assets/airport.jpg" alt="airlines" width="100%" />
 			<div class="text-container">
 				<div class="heading">
-					<Icon name="airport" color="var(--accent-regular)" width="32" class="icon" />
+					<Icon name="airport"/>
 					<h2 class="title">Airports & Aerodromes</h2>
 				</div>
 				<div class="description">
@@ -118,11 +118,11 @@ import { Icon } from 'astro-icon';
 				</div>
 			</div>
 		</div>
-		<div class="card hidden">
+		<div class="card show">
 			<img src="/assets/ato.jpeg" alt="airlines" width="100%" />
 			<div class="text-container">
 				<div class="heading">
-					<Icon name="i-training-class" color="var(--accent-regular)" width="32" class="icon" />
+					<Icon name="i-training-class"/>
 					<h2 class="title">Training Orgs.</h2>
 				</div>
 				<div class="description">
@@ -140,11 +140,11 @@ import { Icon } from 'astro-icon';
 				</div>
 			</div>
 		</div>
-		<div class="card hidden">
+		<div class="card show">
 			<img src="/assets/av.jpg" alt="airlines" width="100%" />
 			<div class="text-container">
 				<div class="heading">
-					<Icon name="car-autonomous" color="var(--accent-regular)" width="32" class="icon" />
+					<Icon name="car-autonomous"/>
 					<h2 class="title">Autonomous Vehicles</h2>
 				</div>
 				<div class="description">
@@ -162,11 +162,11 @@ import { Icon } from 'astro-icon';
 				</div>
 			</div>
 		</div>
-		<div class="card hidden">
+		<div class="card show">
 			<img src="/assets/military.jpg" alt="airlines" width="100%" />
 			<div class="text-container">
 				<div class="heading">
-					<Icon name="fighter-jet" color="var(--accent-regular)" width="32" class="icon" />
+					<Icon name="fighter-jet"/>
 					<h2 class="title">Military Aviation</h2>
 				</div>
 				<div class="description">
@@ -184,11 +184,11 @@ import { Icon } from 'astro-icon';
 				</div>
 			</div>
 		</div>
-		<div class="card hidden">
+		<div class="card show">
 			<img src="/assets/charter.jpg" alt="airlines" width="100%" />
 			<div class="text-container">
 				<div class="heading">
-					<Icon name="airline-digital-gate" color="var(--accent-regular)" width="32" class="icon" />
+					<Icon name="airline-digital-gate"/>
 					<h2 class="title">Charter Operations</h2>
 				</div>
 				<div class="description">
@@ -206,7 +206,9 @@ import { Icon } from 'astro-icon';
 	</section>
 </div>
 
-<script src="../scripts/animate-scroll.js"/>
+<!-- <script src="../scripts/animate-scroll.js"/> -->
+
+
 
 <style>
 	.ops {
@@ -219,7 +221,7 @@ import { Icon } from 'astro-icon';
 
 	.title {
 		font-size: var(--text-lg);
-		
+		align-self: center;
 	}
 
 	.container {
@@ -231,6 +233,7 @@ import { Icon } from 'astro-icon';
 		padding-top: 3rem;
 		
 	}
+
 	h3 {
 		font-size: var(--text-xl);
 	}
@@ -272,20 +275,22 @@ import { Icon } from 'astro-icon';
 		
 	}
 
-	[astro-icon]{
+	[data-icon]{
 		color: var(--accent-regular);
+		font-size: 2rem;
+	}
+
+/*   .ul {
+		color: var(--gray-500);
+		padding-left: .6rem;
+		padding-bottom: 1rem;
+	} */
+
+	.description {
+		padding-left: 1rem;
 		
 	}
 
-	.description {
-		padding-left: 0.3rem;
-	}
-
- .description ul {
-		color: var(--gray-500);
-		padding-left: 1.5rem;
-		padding-bottom: 1rem;
-	}
 
 	.box {
 		border: 1px solid var(--gray-800);
@@ -308,8 +313,6 @@ import { Icon } from 'astro-icon';
 	.show {
 		opacity: 1;
 	}
-
-
 
 	@media (min-width: 50em) {
 		.box {
