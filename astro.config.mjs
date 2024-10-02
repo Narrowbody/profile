@@ -11,6 +11,6 @@ export default defineConfig({
 	integrations: [tailwind(), icon()],
 	output: 'server',
 	adapter: cloudflare({
-		imageService: 'custom',
+		imageService: 'cloudflare',
 	}),
 });

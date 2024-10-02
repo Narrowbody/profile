@@ -1,15 +1,15 @@
 ---
 title: Compliance Monitoring Program
 publishDate: 2023-09-12T07:28:02.014Z
-img: /assets/compliance.png
+img: ../../src/images/compliance.png
 img_alt: compliance monitoring program
 description: A Compliance Monitoring Program in aviation is a systematic and structured process implemented by aviation organizations, such as airlines, to ensure that they adhere to regulatory requirements, industry standards, and their own internal policies and procedures.
 tags:
-  - Airlines
-  - Helicopter Ops.
-  - Autonomous Vehicles
-  - MRO's
-  - Airports
+    - Airlines
+    - Helicopter Ops.
+    - Autonomous Vehicles
+    - MRO's
+    - Airports
 slug: compliance-monitoring
 ---
 
