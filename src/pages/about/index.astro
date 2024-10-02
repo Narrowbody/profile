@@ -1,17 +1,15 @@
 ---
 //About Page
 import { getCollection, getEntry } from 'astro:content';
-const entry = (await getEntry('about', 'bio'));
-
-const { Content, headings } = await entry.render();
-
 import BaseLayout from '../../layouts/BaseLayout.astro';
-
 import ContactCTA from '../../components/ContactCTA.astro';
 import Hero from '../../components/Hero.astro';
-
 import { Image } from 'astro:assets';
-import leventLandscape from "/src/images/levent-landscape.png"
+import leventLandscape from "../../../src/images/levent-landscape.png"
+
+
+const entry = (await getEntry('about', 'bio'));
+const { Content, headings } = await entry.render();
 ---
 
 <BaseLayout title="About | Levent Erdem" description="About Levent Erdem - Aviation Safety and Accident Prevention Consultant">

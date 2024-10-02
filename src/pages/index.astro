@@ -1,7 +1,7 @@
 ---
 //Fetch Image
 import { Image } from 'astro:assets'
-import  leventExternado  from '/src/images/levent-externado-zoomed.jpeg'
+import  leventExternado  from '../images/levent-externado-zoomed.jpeg'
 
 // Fetch FrontMatter data
 import { getCollection } from 'astro:content';
@@ -61,7 +61,7 @@ const experiences = (await getCollection('experience'))
 		<div class="wrapper stack gap-8 lg:gap-20">
 			<header class="hero">
 				<!--Hero Image -->
-				<Image src={ leventExternado } alt="Levent Erdem standing in front of Externado University in Bogota, Colombia"
+				<Image src={ leventExternado } alt="Levent Erdem standing in front of Externado University in Bogotá, Colombia"
 					width="480"
 					height="620"
 				/>
