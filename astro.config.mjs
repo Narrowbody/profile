@@ -10,7 +10,6 @@ import icon from 'astro-icon';
 export default defineConfig({
 	integrations: [tailwind(), icon()],
 	output: 'server',
-	imageService: 'cloudflare',
 	adapter: cloudflare({
 		imageService: 'cloudflare',
 	}),
