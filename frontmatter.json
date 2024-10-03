@@ -1,285 +1,328 @@
 {
-	"$schema": "https://frontmatter.codes/frontmatter.schema.json",
-	"frontMatter.taxonomy.contentTypes": [
-		{
-			"name": "services",
-			"pageBundle": false,
-			"previewPath": null,
-			"fields": [
-				{
-					"title": "company",
-					"name": "company",
-					"type": "string"
-				},
-				{
-					"title": "location",
-					"name": "location",
-					"type": "string"
-				},
-				{
-					"title": "fromDate",
-					"name": "fromDate",
-					"type": "datetime"
-				},
-				{
-					"title": "toDate",
-					"name": "toDate",
-					"type": "datetime"
-				},
-				{
-					"title": "tags",
-					"name": "tags",
-					"type": "tags"
-				},
-				{
-					"title": "categories",
-					"name": "categories",
-					"type": "categories"
-				},
-				{
-					"title": "logo",
-					"name": "logo",
-					"type": "string"
-				},
-				{
-					"title": "type",
-					"name": "type",
-					"type": "string"
-				},
-				{
-					"title": "preview",
-					"name": "preview",
-					"type": "string"
-				}
-			]
-		},
-		{
-			"name": "experience",
-			"pageBundle": false,
-			"previewPath": null,
-			"fields": [
-				{
-					"title": "Company",
-					"name": "company",
-					"type": "string"
-				},
-				{
-					"title": "Location",
-					"name": "location",
-					"type": "string"
-				},
-				{
-					"title": "position",
-					"name": "position",
-					"type": "string"
-				},
-				{
-					"title": "From Date",
-					"name": "fromDate",
-					"type": "datetime",
-					"default": "{{now}}",
-					"isPublishDate": true,
-					"dateFormat": "MMMM, yyyy"
-				},
-				{
-					"title": "To Date",
-					"name": "toDate",
-					"type": "datetime",
-					"dateFormat": "MMMM, yyyy"
-				},
-				{
-					"title": "logo",
-					"name": "logo",
-					"type": "image"
-				},
-				{
-					"title": "Content preview",
-					"name": "preview",
-					"type": "image"
-				},
-				{
-					"title": "type",
-					"name": "type",
-					"type": "string"
-				}
-			]
-		},
-		{
-			"name": "courses",
-			"pageBundle": false,
-			"previewPath": null,
-			"fields": [
-				{
-					"title": "Course Title",
-					"name": "title",
-					"type": "string"
-				},
-				{
-					"title": "Description",
-					"name": "description",
-					"type": "string"
-				},
-				{
-					"title": "Duration",
-					"name": "duration",
-					"type": "string"
-				},
-				{
-					"title": "Tags",
-					"name": "tags",
-					"type": "tags"
-				},
-				{
-					"title": "Course Image",
-					"name": "courseImage",
-					"type": "image"
-				},
-				{
-					"title": "Content preview",
-					"name": "preview",
-					"type": "image",
-					"isPreviewImage": true
-				},
-				{
-					"title": "Image Alt",
-					"name": "img_alt",
-					"type": "string"
-				},
-				{
-					"title": "slug",
-					"name": "slug",
-					"type": "slug",
-					"editable": true,
-					"default": "{{slug}}"
-				},
-				{
-					"title": "type",
-					"name": "type",
-					"type": "string"
-				},
-				{
-					"title": "keywords",
-					"name": "keywords",
-					"type": "datetime"
-				},
-				{
-					"title": "publishDate",
-					"name": "publishDate",
-					"type": "datetime"
-				}
-			]
-		},
-		{
-			"name": "bio",
-			"pageBundle": false,
-			"previewPath": null,
-			"fields": [
-				{
-					"title": "Title",
-					"name": "title",
-					"type": "string"
-				},
-				{
-					"title": "Position",
-					"name": "position",
-					"type": "string"
-				},
-				{
-					"title": "Specialization",
-					"name": "specialization",
-					"type": "string"
-				},
-				{
-					"title": "Headline",
-					"name": "headline",
-					"type": "string"
-				},
-				{
-					"title": "Professional Experience",
-					"name": "professionalExperience",
-					"type": "string"
-				},
-				{
-					"title": "Education",
-					"name": "education",
-					"type": "string"
-				},
-				{
-					"title": "Affiliations",
-					"name": "affiliations",
-					"type": "string"
-				},
-				{
-					"title": "Licenses",
-					"name": "licenses",
-					"type": "string"
-				},
-				{
-					"title": "Languages",
-					"name": "languages",
-					"type": "string"
-				},
-				{
-					"title": "Publish Date",
-					"name": "publishDate",
-					"type": "datetime"
-				},
-				{
-					"title": "layout",
-					"name": "layout",
-					"type": "string"
-				},
-				{
-					"title": "type",
-					"name": "type",
-					"type": "string"
-				}
-			]
-		}
-	],
-
-	"frontMatter.taxonomy.customTaxonomy": [
-		{
-			"id": "clientCategory",
-			"options": [
-				"Airline",
-				"Helicopter Operator",
-				"MRO",
-				"Aerodrome/Airport",
-				"Ground Handling",
-				"Manufacturer",
-				"Military Aviation",
-				"UAV or Autonomous Vehicle",
-				"ATO"
-			]
-		},
-		{
-			"id": "assistanceCategory",
-			"options": ["assess", "advice", "implement", "train"]
-		}
-	],
-
-	"frontMatter.framework.id": "astro",
-	"frontMatter.preview.host": "http://localhost:3000",
-	"frontMatter.content.pageFolders": [
-		{
-			"title": "experience",
-			"path": "[[workspace]]/src/content/experience"
-		},
-		{
-			"title": "services",
-			"path": "[[workspace]]/src/content/services"
-		},
-		{
-			"title": "courses",
-			"path": "[[workspace]]/src/content/courses"
-		},
-		{
-			"title": "bio",
-			"path": "[[workspace]]/src/content/about/",
-			"filePrefix": null
-		}
-	],
-	"frontMatter.content.publicFolder": "public",
-	"frontMatter.dashboard.openOnStart": true
+  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "services",
+      "pageBundle": false,
+      "previewPath": null,
+      "fields": [
+        {
+          "title": "company",
+          "name": "company",
+          "type": "string"
+        },
+        {
+          "title": "location",
+          "name": "location",
+          "type": "string"
+        },
+        {
+          "title": "fromDate",
+          "name": "fromDate",
+          "type": "datetime"
+        },
+        {
+          "title": "toDate",
+          "name": "toDate",
+          "type": "datetime"
+        },
+        {
+          "title": "tags",
+          "name": "tags",
+          "type": "tags"
+        },
+        {
+          "title": "categories",
+          "name": "categories",
+          "type": "categories"
+        },
+        {
+          "title": "logo",
+          "name": "logo",
+          "type": "string"
+        },
+        {
+          "title": "type",
+          "name": "type",
+          "type": "string"
+        },
+        {
+          "title": "preview",
+          "name": "preview",
+          "type": "string"
+        },
+        {
+          "title": "title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "date",
+          "name": "date",
+          "type": "datetime"
+        },
+        {
+          "title": "draft",
+          "name": "draft",
+          "type": "draft"
+        },
+        {
+          "title": "publishDate",
+          "name": "publishDate",
+          "type": "datetime"
+        },
+        {
+          "title": "img",
+          "name": "img",
+          "type": "string"
+        },
+        {
+          "title": "img_alt",
+          "name": "img_alt",
+          "type": "string"
+        },
+        {
+          "title": "fmContentType",
+          "name": "fmContentType",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "experience",
+      "pageBundle": false,
+      "previewPath": null,
+      "fields": [
+        {
+          "title": "Company",
+          "name": "company",
+          "type": "string"
+        },
+        {
+          "title": "Location",
+          "name": "location",
+          "type": "string"
+        },
+        {
+          "title": "position",
+          "name": "position",
+          "type": "string"
+        },
+        {
+          "title": "From Date",
+          "name": "fromDate",
+          "type": "datetime",
+          "default": "{{now}}",
+          "isPublishDate": true,
+          "dateFormat": "MMMM, yyyy"
+        },
+        {
+          "title": "To Date",
+          "name": "toDate",
+          "type": "datetime",
+          "dateFormat": "MMMM, yyyy"
+        },
+        {
+          "title": "logo",
+          "name": "logo",
+          "type": "image"
+        },
+        {
+          "title": "Content preview",
+          "name": "preview",
+          "type": "image"
+        },
+        {
+          "title": "type",
+          "name": "type",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "courses",
+      "pageBundle": false,
+      "previewPath": null,
+      "fields": [
+        {
+          "title": "Course Title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "Duration",
+          "name": "duration",
+          "type": "string"
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "type": "tags"
+        },
+        {
+          "title": "Course Image",
+          "name": "courseImage",
+          "type": "image"
+        },
+        {
+          "title": "Content preview",
+          "name": "preview",
+          "type": "image",
+          "isPreviewImage": true
+        },
+        {
+          "title": "Image Alt",
+          "name": "img_alt",
+          "type": "string"
+        },
+        {
+          "title": "slug",
+          "name": "slug",
+          "type": "slug",
+          "editable": true,
+          "default": "{{slug}}"
+        },
+        {
+          "title": "type",
+          "name": "type",
+          "type": "string"
+        },
+        {
+          "title": "keywords",
+          "name": "keywords",
+          "type": "datetime"
+        },
+        {
+          "title": "publishDate",
+          "name": "publishDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "name": "bio",
+      "pageBundle": false,
+      "previewPath": null,
+      "fields": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "Position",
+          "name": "position",
+          "type": "string"
+        },
+        {
+          "title": "Specialization",
+          "name": "specialization",
+          "type": "string"
+        },
+        {
+          "title": "Headline",
+          "name": "headline",
+          "type": "string"
+        },
+        {
+          "title": "Professional Experience",
+          "name": "professionalExperience",
+          "type": "string"
+        },
+        {
+          "title": "Education",
+          "name": "education",
+          "type": "string"
+        },
+        {
+          "title": "Affiliations",
+          "name": "affiliations",
+          "type": "string"
+        },
+        {
+          "title": "Licenses",
+          "name": "licenses",
+          "type": "string"
+        },
+        {
+          "title": "Languages",
+          "name": "languages",
+          "type": "string"
+        },
+        {
+          "title": "Publish Date",
+          "name": "publishDate",
+          "type": "datetime"
+        },
+        {
+          "title": "layout",
+          "name": "layout",
+          "type": "string"
+        },
+        {
+          "title": "type",
+          "name": "type",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "frontMatter.taxonomy.customTaxonomy": [
+    {
+      "id": "clientCategory",
+      "options": [
+        "Airline",
+        "Helicopter Operator",
+        "MRO",
+        "Aerodrome/Airport",
+        "Ground Handling",
+        "Manufacturer",
+        "Military Aviation",
+        "UAV or Autonomous Vehicle",
+        "ATO"
+      ]
+    },
+    {
+      "id": "assistanceCategory",
+      "options": [
+        "assess",
+        "advice",
+        "implement",
+        "train"
+      ]
+    }
+  ],
+  "frontMatter.framework.id": "astro",
+  "frontMatter.preview.host": "http://localhost:3000",
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "experience",
+      "path": "[[workspace]]/src/content/experience"
+    },
+    {
+      "title": "services",
+      "path": "[[workspace]]/src/content/services"
+    },
+    {
+      "title": "courses",
+      "path": "[[workspace]]/src/content/courses"
+    },
+    {
+      "title": "bio",
+      "path": "[[workspace]]/src/content/about/",
+      "filePrefix": null
+    }
+  ],
+  "frontMatter.content.publicFolder": "public",
+  "frontMatter.dashboard.openOnStart": true
 }

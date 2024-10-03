@@ -9,7 +9,7 @@ import icon from 'astro-icon';
 // https://astro.build/config
 export default defineConfig({
 	integrations: [tailwind(), icon()],
-	output: 'server',
+	output: 'hybrid',
 	adapter: cloudflare({
 		imageService: 'cloudflare',
 	}),

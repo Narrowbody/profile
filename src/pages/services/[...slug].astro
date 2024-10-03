@@ -3,7 +3,7 @@ import { type CollectionEntry, getCollection } from 'astro:content';
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-import ContactCTA from '../../components/ContactCTA.astro';
+import ContactCTA from '../../components/ContactCTA.astro'; 
 import Hero from '../../components/Hero.astro';
 import Icon from '../../components/Icon.astro';
 import Pill from '../../components/Pill.astro';
@@ -34,12 +34,22 @@ const { Content } = await entry.render();
 				<div class="wrapper stack gap-2">
 					<a class="back-link" href="/services/"><Icon icon="arrow-left" />Services</a>
 					<Hero title={entry.data.title} align="start">
+						
 						<div class="details">
-							<div class="tags">
-								{entry.data.tags.map((t) => <Pill>{t}</Pill>)}
+							
+							<div>
+								<h5>Applicable to:</h5>
+									<div class="tags">
+									{entry.data.tags.map((t) => <Pill>{t}</Pill>)}
+								</div>
 							</div>
-							<p class="description">{entry.data.description}</p>
+							
 						</div>
+						<div>
+							<h5>Description:</h5> 
+							<p class="description">{entry.data.description}</p>	
+						</div>
+						
 					</Hero>
 				</div>
 			</header>
@@ -52,7 +62,7 @@ const { Content } = await entry.render();
 				</div>
 			</main>
 		</div>
-		<ContactCTA />
+		<ContactCTA titleForCTA = "Interested in working together?"/>
 	</div>
 </BaseLayout>
 

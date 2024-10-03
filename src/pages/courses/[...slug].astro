@@ -1,5 +1,6 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content';
+import { getEntry } from 'astro:content';
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
@@ -23,7 +24,16 @@ export async function getStaticPaths() {
 	}));
 }
 
-const { entry } = Astro.props;
+const { slug } = Astro.params;
+if (slug === undefined) {
+	throw new Error("Slug is required");
+}
+const entry = await getEntry('courses', slug);
+if (entry === undefined) {
+	return Astro.redirect("/404");
+}
+
+//const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
@@ -34,15 +44,17 @@ const { Content } = await entry.render();
 				<div class="wrapper stack gap-2">
 					<a class="back-link" href="/courses/"><Icon icon="arrow-left" />Courses</a>
 					
-					<Hero title={entry.data.title} align="start" sub={ entry.data.duration }>
-						<div class="details">
+					<Hero title={entry.data.title} align="start" sub={""}>
+						<br class="details">
 							<div class="tags">
+								Applicable to:
 								{entry.data.tags.map((t) => <Pill>{t}</Pill>)}
 							</div>
+							Course Summary:
 							<p class="description">{entry.data.description}</p>
+							Course Duration: {entry.data.duration}
 						</div>
 					</Hero>
-
 				</div>
 			</header>
 

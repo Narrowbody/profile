@@ -5,16 +5,17 @@ date: 2023-09-12T07:47:24.533Z
 preview: /assets/helicopter-accident.jpeg
 draft: true
 tags:
-  - Airlines
-  - Airports
-  - Helicopter Ops.
-  - Autonomous Vehicles
+    - Airlines
+    - Airports
+    - Helicopter Ops.
+    - Autonomous Vehicles
 categories:
-  - Airlines
-  - Airports
+    - Airlines
+    - Airports
 publishDate: 2023-09-12T07:47:24.534Z
 img: /assets/helicopter-accident.jpeg
 img_alt: ''
+fmContentType: services
 ---
 
 An Aviation Emergency Response Program (AERP) is a comprehensive and coordinated plan established by aviation organizations, such as airlines and airports, to effectively respond to and manage various types of emergencies and crises that may occur within the aviation industry. These programs are crucial for ensuring the safety of passengers, crew members, and the public. Here's what an AERP is used for:

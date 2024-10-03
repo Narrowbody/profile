@@ -1,8 +1,8 @@
 ---
 title: Introduction to Accident & Incident Investigations
 description: 'Course is based on ICAO and industry best practices, to provide understanding of investigation process; Factual, Analysis, Prescriptive, and Follow-up Phases'
-duration: 'Course Duration: 5 Days'
-tags: [accident, incident, human factors, tem, rca]
+duration: '5 Days'
+tags: [airlines, ground ops, airports, mro's, general aviation]
 img: '/assets/pen-air.jpeg'
 img_alt: 'pen-air incident'
 preview: '/assets/pen-air.jpeg'
