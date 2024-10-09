@@ -17,8 +17,10 @@ import Icon from '../components/Icon.astro';
 import Pill from '../components/Pill.astro';
 import PortfolioPreview from '../components/PortfolioPreview.astro';
 import CoursesPreview from '../components/CoursesPreview.astro';
-
-
+import MyModal from '../components/MyModal.astro';
+import MyModal2 from '../components/MyModal2.astro';
+import MyModal3 from '../components/MyModal3.astro';
+import MyModal4 from '../components/MyModal4.astro';
 import ExperienceCard from '../components/ExperienceCard.astro';
 import OperationalAreas from '../components/OperationalAreas.astro';
 
@@ -76,12 +78,22 @@ const experiences = (await getCollection('experience'))
 					align="start"
 				>
 					<div class="roles">
-						<a href="/"><Pill><Icon icon="list-magnifying-glass" size="1.33em" /> Assesing</Pill></a>
-						<a href="/"><Pill><Icon icon="strategy" size="1.33em" /> Advising</Pill></a>
-						<a href="/"><Pill><Icon icon="list-checks" size="1.33em" /> Implementing</Pill></a>
-						<a href="/courses/"><Pill><Icon icon="student" size="1.33em" /> Training</Pill></a>
+						<a href="#" id="asses" onclick="assesPill();"><Pill><Icon icon="list-magnifying-glass" size="1.33em"/> Assesing</Pill></a>
+						<a href="#" id="advise" onclick="advisePill();"><Pill><Icon icon="strategy" size="1.33em" /> Advising</Pill></a>
+						<a href="#" id="implement" onclick="implementPill();"><Pill><Icon icon="list-checks" size="1.33em" /> Implementing</Pill></a>
+						<a href="#" id="train" onclick="trainPill();"><Pill><Icon icon="student" size="1.33em" /> Training</Pill></a>
 					</div>
 				</Hero>
+
+				<!--Modal -->
+					<dialog class="flex justify-end items-center">
+						<MyModal title="Assessing" description="some description."/>	
+						<MyModal2 title="Advising" description="some description."/>
+						<MyModal3 title="Implementing" description="some description."/>
+						<MyModal4 title="Training" description="some description."/>
+					</dialog>
+					
+					<script src="../scripts/my-modal.js" />
 			</header>
 
 			<!--Operational Areas -->

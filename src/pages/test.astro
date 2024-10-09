@@ -1,10 +1,10 @@
 ---
 import Timeline from "../components/Timeline.astro";
 import ExperiencePreview from "../components/ExperiencePreview.astro";
-
-import { Icon } from "astro-icon";
-
+import Icon from '../components/Icon.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+
 
 import { getCollection } from 'astro:content';
 import ExperienceLogo from "../components/ExperienceLogo.astro";
@@ -27,11 +27,8 @@ const experiences = (await getCollection('experience'))
       </li>
      ))
     } -->
+
+
 </BaseLayout>
 
 
-<style>
- [astro-icon] {
-  color: var(--accent-regular);
- }
-</style>

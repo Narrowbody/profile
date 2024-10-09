@@ -1,28 +1,90 @@
 ---
 
+export const prerender = false;
+
+/* interface Props {
+	fullname: string;
+  email: string;
+  msg: string;
+}
+
+const { fullname, email, msg } = Astro.props; */
 ---
+  <button>Get Message</button>
 
-<h2>Contact me</h2>
-<form>
- <input type="email" id="email" name="email" placeholder="email"/>
- <input type="button" id="btn" value="Submit"/>
-</form>
+  <form method="POST" >
+    <label for="fullname">Full Name</label>
+      <input id="fullname" required type="text" name="fullname" /><br>
+    <label for="email">E-mail</label>
+      <input id="email" required type="email" name="email" /><br>
+    <label for="msg">Your Message</label>
+      <input id="msg" required type="text" name="msg" /><br>
+    <button>Send Message</button>
+  </form>
 
-<style>
- #email {
-  padding: 10px;
-  width: 300px;
-  border-radius: 5px;border-color: darkgray;
-  border-style: solid;
-  margin-right: 5px;
-  font-size: var(--text-xxl);
+  <script>
+    
 
- }
 
- #btn {
-  padding: 10px;
-  border-radius: 5px;
-  border-color: darkgray;
-  border: none;
- }
-</style>
+  </script>
+
+
+
+  <!-- <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" onsubmit="return false">
+    <div class="mb-4">
+      <label class="block text-gray-500 text-sm font-bold mb-2" for="fullname">
+        Full Name
+      </label>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="fullname" type="text" placeholder="full name" required>
+    </div>
+    <div class="mb-6">
+      <label class="block text-gray-500 text-sm font-bold mb-2" for="email">
+        Email
+      </label>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="email" required>
+    </div>
+
+    <div class="mb-6">
+      <label class="block text-gray-500 text-sm font-bold mb-2" for="msg">
+        Message
+      </label>
+      <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="msg" rows="5" placeholder="your message" required minlength="3"/>
+    </div>
+    
+    <div class="md:flex md:items-center">
+    
+    <div class="md:w-2/3">
+      <button class="shadow bg-purple-700 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" 
+      onclick={"sendMsg()"}>
+        Send Message
+      </button>
+    </div>
+  </div>
+  </form>
+
+  <script>
+    const fullname = null;
+    const email = null;
+    const msg = null;
+    const fields = {fullname, email, msg};
+    
+    class Message {
+      fullname: any;
+      email: any;
+      msg: any;
+      constructor(fullname, email, msg) {
+        this.fullname = fullname;
+        this.email = email;
+        this.msg = msg;
+      }
+    }
+    document.addEventListener("DOMContentLoaded", function() {
+      fields.fullname = document.getElementById('fullname');
+      fields.email = document.getElementById('email');
+      fields.msg = document.getElementById('msg');
+    })
+    function sendMsg() {
+      const message = new Message(fullname.value, email.value, msg.value);
+      alert(`${message.fullname} thank you for your message.`)
+    }
+  </script> -->
