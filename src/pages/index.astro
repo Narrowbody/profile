@@ -1,7 +1,6 @@
 ---
 //Fetch Image
-import { Image } from 'astro:assets'
-import  leventExternado  from '/public/assets/levent-externado-zoomed.jpeg'
+import { Image } from 'astro:assets';
 
 // Fetch FrontMatter data
 import { getCollection } from 'astro:content';
@@ -30,77 +29,103 @@ import OperationalAreas from '../components/OperationalAreas.astro';
 // Page section components
 import ContactCTA from '../components/ContactCTA.astro';
 
-import Timeline from '../components/Timeline.astro';
-import ExperienceTimeline from '../components/ExperienceTimeline.astro';
 import Experience from '../components/Experience.astro';
 // Content Fetching: Services - list four most recent services
 const services = (await getCollection('services'))
 	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
 	.slice(0, 4);
 
-	// Content Fetchin: Courses - List four most recent courses
-	const courses = (await getCollection('courses'))
+// Content Fetchin: Courses - List four most recent courses
+const courses = (await getCollection('courses'))
 	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
 	.slice(0, 4);
 
-	// Content Fetching: Experiences
-const experiences = (await getCollection('experience'))
-	.sort((a, b) => b.data.fromDate.valueOf() - a.data.fromDate.valueOf());
+// Content Fetching: Experiences
+/* const experiences = (await getCollection('experience')).sort(
+	(a, b) => b.data.fromDate.valueOf() - a.data.fromDate.valueOf()
+); */
 
-	//Todo - move the data to FrontMatter
-	const quals = ['Over 35 years experience in aviation safety, risk management, quality, maintenance, and manufacturing', 
+//Todo - move the data to FrontMatter
+/* 	const quals = ['Over 35 years experience in aviation safety, risk management, quality, maintenance, and manufacturing', 
 	'Safety management system, quality, compliance programs development and implementation expertise', 
 	'Broad aircraft maintenance, inspection, production control, front-line, and supervisory experience', 
 	'Comprehensive investigations, auditing, evaluations, root cause analysis, and process measurement skills',
 	'Proficiency in airline documentation, manual management, system development, and implementation',
-	'Broad international background'] 
-
-	
+	'Broad international background']  */
 ---
 
 <BaseLayout>
-	<div class="stack gap-20 lg:gap-48">
-		<div class="wrapper stack gap-8 lg:gap-20">
-			<header class="hero">
+	<div class='stack gap-20 lg:gap-48'>
+		<div class='wrapper stack gap-8 lg:gap-20'>
+			<header class='hero'>
 				<!--Hero Image -->
-				<Image 
-					src="/assets/levent-externado-zoomed.jpeg" 
-					alt="Levent Erdem standing in front of Externado University in Bogotá, Colombia"
-					width="480"
-					height="620"
+				<Image
+					src='/assets/levent-externado-zoomed.jpeg'
+					alt='Levent Erdem standing in front of Externado University in Bogotá, Colombia'
+					width='480'
+					height='620'
 				/>
 				<!-- src="https://placehold.co/480x620" -->
 
 				<Hero
 					title="Hello, I'm Levent"
-					tagline="I am an Aviation Safety/Accident Prevention Consultant and Educator"
-					sub="I can assist you with..."
-					align="start"
-				>
-					<div class="roles">
-						<a href="#" id="asses" onclick="assesPill();"><Pill><Icon icon="list-magnifying-glass" size="1.33em"/> Assesing</Pill></a>
-						<a href="#" id="advise" onclick="advisePill();"><Pill><Icon icon="strategy" size="1.33em" /> Advising</Pill></a>
-						<a href="#" id="implement" onclick="implementPill();"><Pill><Icon icon="list-checks" size="1.33em" /> Implementing</Pill></a>
-						<a href="#" id="train" onclick="trainPill();"><Pill><Icon icon="student" size="1.33em" /> Training</Pill></a>
+					tagline='I am an Aviation Safety/Accident Prevention Consultant and Educator'
+					sub='I can assist you with...'
+					align='start'>
+					<div class='roles'>
+						<a href='#' id='asses' onclick='assesPill();'
+							><Pill
+								><Icon
+									icon='list-magnifying-glass'
+									size='1.33em'
+								/> Assesing</Pill
+							></a
+						>
+						<a href='#' id='advise' onclick='advisePill();'
+							><Pill
+								><Icon icon='strategy' size='1.33em' /> Advising</Pill
+							></a
+						>
+						<a href='#' id='implement' onclick='implementPill();'
+							><Pill
+								><Icon icon='list-checks' size='1.33em' /> Implementing</Pill
+							></a
+						>
+						<a href='#' id='train' onclick='trainPill();'
+							><Pill
+								><Icon icon='student' size='1.33em' /> Training</Pill
+							></a
+						>
 					</div>
 				</Hero>
 
 				<!--Modal -->
-					<dialog class="flex justify-end items-center">
-						<MyModal title="Assessing" description="some description."/>	
-						<MyModal2 title="Advising" description="some description."/>
-						<MyModal3 title="Implementing" description="some description."/>
-						<MyModal4 title="Training" description="some description."/>
-					</dialog>
-					
-					<script src="../scripts/my-modal.js" />
+				<dialog class='flex justify-end items-center'>
+					<MyModal
+						title='Assessing'
+						description='some description.'
+					/>
+					<MyModal2
+						title='Advising'
+						description='some description.'
+					/>
+					<MyModal3
+						title='Implementing'
+						description='some description.'
+					/>
+					<MyModal4
+						title='Training'
+						description='some description.'
+					/>
+				</dialog>
+
+				<script src='../scripts/my-modal.js'></script>
 			</header>
 
 			<!--Operational Areas -->
 			<OperationalAreas />
 
-
-<!-- 						<section class="section with-background bg-variant">
+			<!-- 						<section class="section with-background bg-variant">
 							<header class="section-header stack gap-2 lg:gap-4">
 								<h3>Summary of Qualifications</h3>
 								<p>
@@ -118,228 +143,223 @@ const experiences = (await getCollection('experience'))
 								</Grid>
 							</div>
 						</section>  -->
-
-
 		</div>
 
 		<!--Services Highlites -->
-		<main class="wrapper stack gap-20 lg:gap-48">
-			<section class="section with-background with-cta">
-				<header class="section-header stack gap-2 lg:gap-4">
+		<main class='wrapper stack gap-20 lg:gap-48'>
+			<section class='section with-background with-cta'>
+				<header class='section-header stack gap-2 lg:gap-4'>
 					<h3>Services</h3>
-					<p>Take a look below at some of the services I provided for my clients from the past few years.</p>
+					<p>
+						Take a look below at some of the services I provided for
+						my clients from the past few years.
+					</p>
 				</header>
-				<div class="gallery">
-					<Grid variant="offset">
+				<div class='gallery'>
+					<Grid variant='offset'>
 						{
 							services.map((service) => (
 								<li>
 									<PortfolioPreview services={service} />
 								</li>
-							)) 
+							))
 						}
 					</Grid>
 				</div>
 
 				<!--Services - View All -->
-				<div class="cta">
-					<CallToAction href="/services/">
+				<div class='cta'>
+					<CallToAction href='/services/'>
 						View All
-						<Icon icon="arrow-right" size="1.2em" />
+						<Icon icon='arrow-right' size='1.2em' />
 					</CallToAction>
 				</div>
 			</section>
 
-		<!--Qualifications Section--> 				
-		<ExperienceCard />
+			<!--Qualifications Section-->
+			<ExperienceCard />
 
-		<!--Training Highlites -->
-		<main class="wrapper stack gap-20 lg:gap-48">
-			<section class="section with-background with-cta">
-				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Training</h3>
-					<p>Take a look below at some of the training I provided for my clients from the past few months.</p>
-				</header>
-				<div class="gallery">
-					<Grid variant="offset">
-						{
-							courses.map((course) => (
-								<li>
-									<CoursesPreview courses={course} />
-								</li>
-							)) 
-						}
-					</Grid>
-				</div>
+			<!--Training Highlites -->
+			<main class='wrapper stack gap-20 lg:gap-48'>
+				<section class='section with-background with-cta'>
+					<header class='section-header stack gap-2 lg:gap-4'>
+						<h3>Training</h3>
+						<p>
+							Take a look below at some of the training I provided
+							for my clients from the past few months.
+						</p>
+					</header>
+					<div class='gallery'>
+						<Grid variant='offset'>
+							{
+								courses.map((course) => (
+									<li>
+										<CoursesPreview courses={course} />
+									</li>
+								))
+							}
+						</Grid>
+					</div>
 
-				<!--Courses - View All -->
-				<div class="cta">
-					<CallToAction href="/courses/">
-						View All
-						<Icon icon="arrow-right" size="1.2em" />
-					</CallToAction>
-				</div>
-			</section>
-
-			<!--Experience Timeline -->
-			<section class="section with-background bg-variant">
-				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Experience Timeline</h3>
-				</header>
-				
+					<!--Courses - View All -->
+					<div class='cta'>
+						<CallToAction href='/courses/'>
+							View All
+							<Icon icon='arrow-right' size='1.2em' />
+						</CallToAction>
+					</div>
 				</section>
-			<!-- <Timeline /> -->
-				<Experience />	
-			
-					
-				
 
-			<!--Contact Me -->	
-				 <ContactCTA titleForCTA = "Interested in working together?"/>
-			
+				<!--Experience Timeline -->
+				<section class='section with-background bg-variant'>
+					<header class='section-header stack gap-2 lg:gap-4'>
+						<h3>Experience Timeline</h3>
+					</header>
+				</section>
+				<!-- <Timeline /> -->
+				<Experience />
+
+				<!--Contact Me -->
+				<ContactCTA titleForCTA='Interested in working together?' />
 			</main>
-			</div>
-</BaseLayout>
+		</main>
+	</div>
 
+	<style>
+		.container {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+		}
 
-
-<style>
-
-	.container{
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-	}
-
-	.hero {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 2rem;
-	}
-
-	.roles {
-		display: ;
-	}
-
-	.roles a {
-		text-decoration: none;
-	}
-
-	.hero img {
-		aspect-ratio: 5 / 4;
-		object-fit: fill;
-		object-position: top;
-		border-radius: 1rem;
-		box-shadow: var(--shadow-lg);
-		filter: grayscale(0%);
-	}
-
-	@media (min-width: 50em) {
 		.hero {
-			display: grid;
-			grid-template-columns: 4fr 4fr;
-			padding-inline: 2.5rem;
-			gap: 3.75rem;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 2rem;
 		}
 
 		.roles {
-			margin-top: 0.5rem;
-			display: flex;
-			gap: 0.5rem;
+			display:;
+		}
+
+		.roles a {
+			text-decoration: none;
 		}
 
 		.hero img {
-			aspect-ratio: 3 / 4;
-			border-radius: 4.5rem;
-			object-fit: cover;
+			aspect-ratio: 5 / 4;
+			object-fit: fill;
+			object-position: top;
+			border-radius: 1rem;
+			box-shadow: var(--shadow-lg);
+			filter: grayscale(0%);
 		}
-	}
 
-	/* ====================================================== */
+		@media (min-width: 50em) {
+			.hero {
+				display: grid;
+				grid-template-columns: 4fr 4fr;
+				padding-inline: 2.5rem;
+				gap: 3.75rem;
+			}
 
-	.section {
-		display: grid;
-		gap: 2rem;
-	}
+			.roles {
+				margin-top: 0.5rem;
+				display: flex;
+				gap: 0.5rem;
+			}
 
-	.with-background {
-		position: relative;
-	}
+			.hero img {
+				aspect-ratio: 3 / 4;
+				border-radius: 4.5rem;
+				object-fit: cover;
+			}
+		}
 
-	.with-background::before {
-		--hero-bg: var(--bg-image-subtle-2);
-		content: '';
-		position: absolute;
-		pointer-events: none;
-		left: 50%;
-		width: 100vw;
-		aspect-ratio: calc(2.25 / var(--bg-scale));
-		top: 0;
-		transform: translateY(-75%) translateX(-50%);
-		background:
-			url('/assets/backgrounds/noise.png') top center/220px repeat,
-			var(--hero-bg) center center / var(--bg-gradient-size) no-repeat,
-			var(--gray-999);
-		background-blend-mode: overlay, normal, normal, normal;
-		mix-blend-mode: var(--bg-blend-mode);
-		z-index: -1;
-	}
+		/* ====================================================== */
 
-	.with-background.bg-variant::before {
-		--hero-bg: var(--bg-image-subtle-1);
-	}
-
-	.section-header {
-		justify-self: center;
-		text-align: center;
-		max-width: 50ch;
-		font-size: var(--text-md);
-		color: var(--gray-300);
-	}
-
-	.section-header h3 {
-		font-size: var(--text-2xl);
-	}
-
-	@media (min-width: 50em) {
 		.section {
-			grid-template-columns: repeat(4, 1fr);
-			grid-template-areas: 'header header header header' 'gallery gallery gallery gallery';
-			gap: 4rem;
+			display: grid;
+			gap: 2rem;
 		}
 
-		.section.with-cta {
-			grid-template-areas: 'header header header cta' 'gallery gallery gallery gallery';
+		.with-background {
+			position: relative;
+		}
+
+		.with-background::before {
+			--hero-bg: var(--bg-image-subtle-2);
+			content: '';
+			position: absolute;
+			pointer-events: none;
+			left: 50%;
+			width: 100vw;
+			aspect-ratio: calc(2.25 / var(--bg-scale));
+			top: 0;
+			transform: translateY(-75%) translateX(-50%);
+			background:
+				url('/assets/backgrounds/noise.png') top center/220px repeat,
+				var(--hero-bg) center center / var(--bg-gradient-size) no-repeat,
+				var(--gray-999);
+			background-blend-mode: overlay, normal, normal, normal;
+			mix-blend-mode: var(--bg-blend-mode);
+			z-index: -1;
+		}
+
+		.with-background.bg-variant::before {
+			--hero-bg: var(--bg-image-subtle-1);
 		}
 
 		.section-header {
-			grid-area: header;
-			font-size: var(--text-lg);
+			justify-self: center;
+			text-align: center;
+			max-width: 50ch;
+			font-size: var(--text-md);
+			color: var(--gray-300);
 		}
 
 		.section-header h3 {
-			font-size: var(--text-4xl);
+			font-size: var(--text-2xl);
 		}
 
-		.with-cta .section-header {
-			justify-self: flex-start;
-			text-align: left;
+		@media (min-width: 50em) {
+			.section {
+				grid-template-columns: repeat(4, 1fr);
+				grid-template-areas: 'header header header header' 'gallery gallery gallery gallery';
+				gap: 4rem;
+			}
+
+			.section.with-cta {
+				grid-template-areas: 'header header header cta' 'gallery gallery gallery gallery';
+			}
+
+			.section-header {
+				grid-area: header;
+				font-size: var(--text-lg);
+			}
+
+			.section-header h3 {
+				font-size: var(--text-4xl);
+			}
+
+			.with-cta .section-header {
+				justify-self: flex-start;
+				text-align: left;
+			}
+
+			.gallery {
+				grid-area: gallery;
+			}
+
+			.cta {
+				grid-area: cta;
+			}
 		}
 
-		.gallery {
-			grid-area: gallery;
-			
-		}
+		/* ====================================================== */
 
-		.cta {
-			grid-area: cta;
-		}
-	}
-
-	/* ====================================================== */
-
-/* .mention-card {
+		/* .mention-card {
 		height: 9rem;
 		justify-content: center;
 		align-items: center;
@@ -368,4 +388,5 @@ const experiences = (await getCollection('experience'))
 			height: 9.5rem;
 		}
 	} */
-</style>
+	</style>
+</BaseLayout>

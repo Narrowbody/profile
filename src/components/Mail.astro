@@ -1,6 +1,5 @@
 ---
-
-export const prerender = false;
+//import emailjs from '@emailjs/browser';
 
 /* interface Props {
 	fullname: string;
@@ -10,27 +9,41 @@ export const prerender = false;
 
 const { fullname, email, msg } = Astro.props; */
 ---
-  <button>Get Message</button>
 
-  <form method="POST" >
-    <label for="fullname">Full Name</label>
-      <input id="fullname" required type="text" name="fullname" /><br>
-    <label for="email">E-mail</label>
-      <input id="email" required type="email" name="email" /><br>
-    <label for="msg">Your Message</label>
-      <input id="msg" required type="text" name="msg" /><br>
-    <button>Send Message</button>
-  </form>
+<script src='https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js'
+></script>
 
-  <script>
-    
+<script>
+	(function () {
+		//emailjs.init( "wo8PlMYCCpEbD-2Z5" );
+	})();
+</script>
 
+<!-- <script>
+	const handleForm = async (e) => {
+		try {
+			//await emailjs.sendForm('contact_service', 'contact_form', document.getElementById('contact-form'));
+			alert('email sent');
+		} catch (error) {
+			console.error(error);
+			alert('Failed to send email');
+		}
+	};
+</script> -->
+<h4>Contact Form</h4>
+<form id='contact-form' onsubmit='handleForm'>
+	<!-- To simplify the tutorial, the value is static. -->
+	<input type='hidden' name='contact_number' value='697483' />
+	<label>Full Name</label>
+	<input type='text' name='user_name' /><br /><br />
+	<label>Email</label>
+	<input type='email' name='user_email' /><br /><br />
+	<label>Message</label>
+	<textarea name='message'></textarea><br /><br />
+	<input type='submit' value='Send your message' />
+</form>
 
-  </script>
-
-
-
-  <!-- <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" onsubmit="return false">
+<!-- <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" onsubmit="return false">
     <div class="mb-4">
       <label class="block text-gray-500 text-sm font-bold mb-2" for="fullname">
         Full Name

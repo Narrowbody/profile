@@ -8,7 +8,7 @@ import ExperiencePreview from './ExperiencePreview.astro';
 const experiences = (await getCollection('experience'))
 	.sort((b, a) => b.data.fromDate.valueOf() - a.data.fromDate.valueOf());
 
-const { data } = Astro.props;
+
 ---
 
 <!-- {

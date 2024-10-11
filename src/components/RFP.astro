@@ -1,16 +1,15 @@
 ---
-if (Astro.request.method === "POST") {
-  try {
-    const data = await Astro.request.formData();
-    const fullName = data.get("fullName");
-    const email = data.get("email");
-
-    // Do something with the data
-  } catch (error) {
-    if (error instanceof Error) {
-      console.error(error.message);
-    }
-  }
+if (Astro.request.method === 'POST') {
+	try {
+		//const data = await Astro.request.formData();
+		//const fullName = data.get("fullName");
+		//const email = data.get("email");
+		// Do something with the data
+	} catch (error) {
+		if (error instanceof Error) {
+			console.error(error.message);
+		}
+	}
 }
 ---
 
@@ -44,10 +43,8 @@ if (Astro.request.method === "POST") {
     
   </div>
 </form> -->
-
-
 <style>
-	.form{
+	.form {
 		display: grid;
 		border: solid, 1px;
 		border-color: aqua;
@@ -55,19 +52,19 @@ if (Astro.request.method === "POST") {
 		border: 2rem;
 	}
 
- #email, #fullName{
-  padding: 5px;
-  width: 30rem;
-  border-radius: 5px;border-color: darkgray;
-  border-style: solid;
-  margin-right: 5px;
-  margin-bottom: 5px;
-  font-size: var(--text-xxl);
- }
+	#email,
+	#fullName {
+		padding: 5px;
+		width: 30rem;
+		border-radius: 5px;
+		border-color: darkgray;
+		border-style: solid;
+		margin-right: 5px;
+		margin-bottom: 5px;
+		font-size: var(--text-xxl);
+	}
 
-
-
- 	.menu-button {
+	.menu-button {
 		position: relative;
 		display: grid;
 		border: 0;
