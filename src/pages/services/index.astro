@@ -14,17 +14,16 @@ const services = (await getCollection('services')).sort(
 ---
 
 <BaseLayout
-	title="Services Offered | Levent Erdem"
-	description="Learn about services Levent can offer"
->
-	<div class="stack gap-20">
-		<main class="wrapper stack gap-8">
+	title='Services Offered | Levent Erdem'
+	description='Learn about services Levent can offer'>
+	<div class='stack gap-20'>
+		<main class='wrapper stack gap-8'>
 			<Hero
-				title="Services"
-				tagline="Below, some of the services I can offer to assist you."
-				align="start"
+				title='Services & Programs'
+				tagline='Below, some of the services or programs I can deliver, or build to assist you...'
+				align='start'
 			/>
-			<Grid variant="offset">
+			<Grid variant='offset'>
 				{
 					services.map((service) => (
 						<li>
@@ -34,6 +33,6 @@ const services = (await getCollection('services')).sort(
 				}
 			</Grid>
 		</main>
-		<ContactCTA titleForCTA = "Interested in a program development?"/>
+		<ContactCTA titleForCTA='Interested in a program development?' />
 	</div>
 </BaseLayout>

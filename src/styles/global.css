@@ -17,7 +17,7 @@
 	--gray-999: #ffffff;
 
 	--accent-light: #c561f6;
-	/* --accent-regular: #7611a6; */
+	--accent-regular: #7611a6;
 	--accent-regular: #060249dd;
 	--accent-dark: #1c0056;
 	--accent-overlay: hsla(280, 89%, 67%, 0.33);
@@ -287,4 +287,10 @@ h5 {
 	.lg\:gap-48 {
 		gap: 12rem;
 	}
+}
+
+.dialog {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }

@@ -12,21 +12,20 @@
 		"astro": "astro"
 	},
 	"dependencies": {
-		"@astrojs/cloudflare": "^11.1.0",
-		"@astrojs/db": "^0.14.2",
 		"@astrojs/react": "^3.6.2",
-		"@astrojs/tailwind": "^5.1.1",
+		"@astrojs/tailwind": "^5.1.2",
 		"@libsql/client": "^0.14.0",
-		"@types/react": "^18.3.11",
-		"@types/react-dom": "^18.3.0",
-		"astro": "^4.15.10",
+		"@types/react": "^18.3.12",
+		"@types/react-dom": "^18.3.1",
+		"appwrite": "^16.0.2",
+		"astro": "^5.0.0-beta.5",
 		"astro-icon": "^1.1.1",
 		"drizzle-orm": "^0.34.1",
 		"free-astro-components": "^1.1.1",
 		"node": "^22.9.0",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
-		"tailwindcss": "^3.4.13"
+		"tailwindcss": "^3.4.14"
 	},
 	"devDependencies": {
 		"drizzle-kit": "^0.25.0",

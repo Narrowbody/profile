@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/MarkdownLayout.astro
 title: Bio
 position: Senior Consultant
 specialization: Aviation Safety and Accident Prevention

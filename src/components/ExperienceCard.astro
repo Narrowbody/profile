@@ -1,56 +1,57 @@
 ---
-import Grid from "./Grid.astro";
+import Grid from './Grid.astro';
 
-
-const quals = ['Over 35 years experience in aviation safety, risk management, quality, maintenance, and manufacturing.', 
-	'Safety management system, quality, compliance programs development and implementation expertise.', 
-	'Broad aircraft maintenance, inspection, production control, front-line, and supervisory experience.', 
+const quals = [
+	'Over 35 years experience in aviation safety, risk management, quality, maintenance, and manufacturing.',
+	'Safety management system, quality, compliance programs development and implementation expertise.',
+	'Broad aircraft maintenance, inspection, production control, front-line, and supervisory experience.',
 	'Comprehensive investigations, auditing, evaluations, root cause analysis, and process measurement skills.',
 	'Proficiency in airline documentation, manual management, system development, and implementation.',
-	'Broad international background.']
+	'Broad international background.',
+];
 ---
 
-
-<section class="section with-background bg-variant">
-	<header class="section-header stack gap-2 lg:gap-4">
+<section class='section with-background bg-variant'>
+	<header class='section-header stack gap-2 lg:gap-4'>
 		<h3>Summary of Qualifications</h3>
 		<p>
-			I have been fortunate to acquire the following qualifications throughout my extensive aviation career.
+			I have been fortunate to acquire the following qualifications
+			throughout my extensive aviation career...
 		</p>
 	</header>
-	<div class="gallery">
-		<Grid variant="small">
-			{ quals.map((quals) => (
-			<li class="box">
-				<h6>{ quals }</h6>
-			</li>
-			))
+	<div class='gallery'>
+		<Grid variant='small'>
+			{
+				quals.map((quals) => (
+					<li class='box'>
+						<h6>{quals}</h6>
+					</li>
+				))
 			}
 		</Grid>
 	</div>
 </section>
 
-
 <style>
-
-.section {
+	.section {
 		display: grid;
-		gap: 2rem;
+		gap: 3rem;
+		margin-top: 2rem;
 	}
 
 	.with-background {
 		position: relative;
 	}
 
- .section-header {
+	.section-header {
 		justify-self: center;
-		text-align: center;
+		text-align: left;
 		max-width: 50ch;
 		font-size: var(--text-md);
 		color: var(--gray-300);
 	}
 
- .box {
+	.box {
 		border: 1px solid var(--gray-800);
 		border-radius: 0.75rem;
 		padding: 1.5rem;
@@ -58,15 +59,15 @@ const quals = ['Over 35 years experience in aviation safety, risk management, qu
 		box-shadow: var(--shadow-md);
 	}
 
-.box:hover {
-	transform: scale(1.05);
-	transition: transform 0.2s ease-in-out;
-}
+	.box:hover {
+		transform: scale(1.05);
+		transition: transform 0.2s ease-in-out;
+	}
 
 	@media (min-width: 50em) {
 		.mention-card {
 			border-radius: 1.5rem;
-			height: 9.5rem;
+			height: 10rem;
 			display: flex;
 			flex-direction: row;
 		}

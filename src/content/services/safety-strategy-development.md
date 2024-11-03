@@ -5,10 +5,9 @@ date: 2023-09-12T08:18:30.663Z
 preview: '/assets/stock-1.jpg'
 draft: true
 tags:
-  - Airlines
-  - Autonomous Vehicles
-  - Helicopter Ops.
-  - Airports
+    - Airlines
+    - Helicopter Ops.
+    - Airports
 categories: []
 publishDate: 2023-09-12T08:18:30.663Z
 img: '/assets/stock-1.jpg'

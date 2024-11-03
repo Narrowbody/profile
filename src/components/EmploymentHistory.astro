@@ -1,0 +1,298 @@
+---
+
+---
+
+<!--Experience Timeline -->
+<section class='section with-background bg-variant'>
+	<header class='section-header stack gap-2 lg:gap-4'>
+		<h3>Employment Timeline</h3>
+		<p>Below, you can find out about my employment history</p>
+	</header>
+	<div class='timeline'>
+		<div class='container left-container'>
+			<img src='/assets/logos/world_logo.svg' />
+			<div class='text-box'>
+				<h5 class='title'>Independent Consultant - Worldwide</h5>
+				<small class='small'>2014-Present</small>
+				<p class='position'>
+					Aviation Safety and Accident Prevention Consultant &
+					Educator
+				</p>
+				<span class='left-container-arrow'></span>
+			</div>
+		</div>
+		<div class='container right-container'>
+			<img src='/assets/logos/marsh_logo.svg' />
+			<div class='text-box'>
+				<h5 class='title'>Marsh Ltd., London, U.K.</h5>
+				<small class='small'>2011-2014</small>
+				<p class='position'>
+					Senior Vice President, Aviation and Aerospace Practice
+				</p>
+				<span class='right-container-arrow'></span>
+			</div>
+		</div>
+		<div class='container left-container'>
+			<img src='/assets/logos/jetBlue_logo.svg' />
+			<div class='text-box'>
+				<h5 class='title'>Jet Blue Airways - New York, USA</h5>
+				<small class='small'>2006-2011</small>
+				<p class='position'>Director, System Safety</p>
+				<span class='left-container-arrow'></span>
+			</div>
+		</div>
+		<div class='container right-container'>
+			<img src='/assets/logos/Delta_logo.svg' />
+			<div class='text-box'>
+				<h5 class='title'>Delta Air Lines - Atlanta, Georgia USA</h5>
+				<small class='small'>1991-2006</small>
+				<p class='position'>
+					2001-2006 | Manager, Corporate Internal Evaluations
+				</p>
+				<p class='position'>
+					1998-2001 | Auditor, Quality Assurance, Aircraft Mnt & Eng.
+				</p>
+				<p class='position'>
+					1991-1998 | Held various Aircraft Mnt & Engineering titles
+				</p>
+				<span class='right-container-arrow'></span>
+			</div>
+		</div>
+		<div class='container left-container'>
+			<img src='/assets/logos/PanAm_logo.svg' />
+			<div class='text-box'>
+				<h5 class='title'>Pan Am - Miami, Florida USA</h5>
+				<small class='small'>1988-1991</small>
+				<p class='position'>
+					Held various Aircraft Maintenance and Engineering titles
+				</p>
+				<span class='left-container-arrow'></span>
+			</div>
+		</div>
+		<div class='container right-container'>
+			<img src='/assets/logos/TAI_logo.svg' />
+			<div class='text-box'>
+				<h5 class='title'>
+					TAI - Ankara, Turkey - Subsidiary of General Dynamics, USA
+				</h5>
+				<small class='small'>1986-1988</small>
+				<p class='position'>
+					Q.A. Plans and Procedures Engineer, Flight Operations
+				</p>
+				<span class='right-container-arrow'></span>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	body {
+		background-color: var(--gray-999);
+		color: var(--gray-200);
+		font-family: var(--font-brand);
+		-webkit-font-smoothing: antialiased;
+		line-height: 1.5;
+	}
+	.with-background {
+		position: relative;
+	}
+	.section {
+		display: grid;
+		gap: 2rem;
+		margin-top: 10rem;
+		margin-bottom: 5rem;
+	}
+	.section-header {
+		justify-self: center;
+		text-align: center;
+		max-width: 50ch;
+		font-size: var(--text-md);
+		color: var(--gray-300);
+	}
+	.section-title {
+		font-size: var(--text-3xl);
+	}
+	.title {
+		font-size: var(--text-lg);
+	}
+	.small {
+		font-size: var(--text-base);
+		margin-top: 0.5rem;
+	}
+	.position {
+		font-size: var(--text-sm);
+	}
+	.timeline {
+		position: relative;
+		max-width: 1200px;
+		margin-top: 3rem;
+	}
+	.container {
+		padding: 10px 50px;
+		position: relative;
+		width: 50%;
+		animation: movedown 1s linear forwards;
+		opacity: 0;
+	}
+
+	@keyframes movedown {
+		0% {
+			opacity: 0;
+			transform: translateY(-30px);
+		}
+		100% {
+			opacity: 1;
+			transform: translateY(0px);
+		}
+	}
+	.container:nth-child(1) {
+		animation-delay: 0s;
+		transition: ease-in;
+	}
+	.container:nth-child(2) {
+		animation-delay: 1s;
+	}
+	.container:nth-child(3) {
+		animation-delay: 2s;
+	}
+	.container:nth-child(4) {
+		animation-delay: 3s;
+	}
+	.container:nth-child(5) {
+		animation-delay: 4s;
+	}
+	.container:nth-child(6) {
+		animation-delay: 5s;
+	}
+	.text-box {
+		padding: 20px 30px;
+		background-color: var(--gray-999_40);
+		box-shadow: var(--shadow-md);
+		border: 1px solid var(--gray-800);
+		position: relative;
+		border-radius: 10px;
+	}
+	.card {
+		width: 325px;
+		height: 350px;
+		border: 1px solid var(--gray-800);
+		border-radius: 10px;
+		overflow: hidden;
+		background-color: var(--gray-999_40);
+		box-shadow: var(--shadow-md);
+	}
+
+	.left-container {
+		left: 0;
+		text-align: right;
+	}
+	.right-container {
+		left: 50%;
+	}
+	.container img {
+		position: absolute;
+		width: 60px;
+		border-radius: 50%;
+		right: -30px;
+		top: 24px;
+		z-index: 10;
+		box-shadow: var(--shadow-md);
+	}
+	.right-container img {
+		left: -30px;
+	}
+	.timeline::after {
+		content: '';
+		position: absolute;
+		width: 6px;
+		height: 100%;
+		background: var(--gray-900);
+		top: 0;
+		left: 50%;
+		margin-left: -3px;
+		z-index: -1;
+		animation: moveline 6s linear forwards;
+	}
+	@keyframes moveline {
+		0% {
+			height: 0;
+		}
+		100% {
+			height: 100%;
+		}
+	}
+	.text-box h2 {
+		font-weight: 600;
+	}
+	.text-box small {
+		display: inline-block;
+		margin-bottom: 15px;
+	}
+	.left-container-arrow {
+		height: 0;
+		width: 0;
+		position: absolute;
+		top: 28px;
+		z-index: -1;
+		border-top: 15px solid transparent;
+		border-bottom: 15px solid transparent;
+		border-left: 15px solid;
+		border-left-color: var(--gray-800);
+		right: -15px;
+	}
+	.right-container-arrow {
+		height: 0;
+		width: 0;
+		position: absolute;
+		top: 28px;
+		z-index: -1;
+		border-top: 15px solid transparent;
+		border-bottom: 15px solid transparent;
+		border-right: 15px solid;
+		border-right-color: var(--gray-800);
+		left: -15px;
+	}
+
+	@media screen and (max-width: 600px) {
+		.timeline {
+			margin: 50px auto;
+			padding-left: 5px;
+		}
+		.timeline::after {
+			left: 35px;
+		}
+		.container {
+			width: 100%;
+			padding-left: 80px;
+			padding-right: 25px;
+		}
+		.text-box {
+			font-size: 13px;
+		}
+		.text-box small {
+			margin-bottom: 10px;
+		}
+		.right-container {
+			left: 0;
+		}
+		.left-container img,
+		.right-container img {
+			left: 0px;
+		}
+		.left-container-arrow,
+		.right-container-arrow {
+			border-right: 15px solid;
+			border-right-color: var(--gray-800);
+			border-left: 0;
+			left: -15px;
+		}
+		.left-container {
+			text-align: left;
+		}
+	}
+</style>

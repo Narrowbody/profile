@@ -1,20 +1,25 @@
 ---
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'free-astro-components'
+import {
+	Button,
+	Modal,
+	ModalHeader,
+	ModalBody,
+	ModalFooter,
+} from 'free-astro-components';
 
 const { title, description } = Astro.props;
 ---
 
-
-    <Modal id="modal-id" size="xl">
-      <ModalHeader>
-        <h5>{ title }</h5>
-      </ModalHeader>
-      <ModalBody>
-        <p class="">
-          { description }
-        </p>
-      </ModalBody>
-      <ModalFooter>
-        <Button label="Close" data-modal-close />
-      </ModalFooter>
-  </Modal>
+<Modal id='modal-id' size='xl'>
+	<ModalHeader>
+		<h5>{title}</h5>
+	</ModalHeader>
+	<ModalBody>
+		<p class=''>
+			{description}
+		</p>
+	</ModalBody>
+	<ModalFooter>
+		<Button label='Close' data-modal-close />
+	</ModalFooter>
+</Modal>

@@ -1,0 +1,17 @@
+.button {
+	font-weight: bold;
+	cursor: pointer;
+	background-color: hwb(317 50% 15%);
+	margin-top: 15px;
+	padding: 10px 15px;
+	border-radius: 5px;
+	font-size: 1.1em;
+}
+
+.button:hover {
+	background-color: hwb(317 50% 5%);
+}
+
+.button:active {
+	background-color: hwb(317 50% 0%);
+}

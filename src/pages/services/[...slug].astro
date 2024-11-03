@@ -2,10 +2,8 @@
 import { type CollectionEntry, getCollection } from 'astro:content';
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
-
-import ContactCTA from '../../components/ContactCTA.astro'; 
+import ContactCTA from '../../components/ContactCTA.astro';
 import Hero from '../../components/Hero.astro';
-import Icon from '../../components/Icon.astro';
 import Pill from '../../components/Pill.astro';
 
 interface Props {
@@ -28,69 +26,89 @@ const { Content } = await entry.render();
 ---
 
 <BaseLayout title={entry.data.title} description={entry.data.description}>
-	<div class="stack gap-20">
-		<div class="stack gap-15">
+	<div class='stack gap-20'>
+		<div class='stack gap-15'>
 			<header>
-				<div class="wrapper stack gap-2">
-					<a class="back-link" href="/services/"><Icon icon="arrow-left" />Services</a>
-					<Hero title={entry.data.title} align="start">
-						
-						<div class="details">
-							
-							<div>
+				<div class='wrapper stack gap-2'>
+					<div class='back'>
+						<a class='back-link' href='/services/'
+							>{'< Back to Services'}</a
+						>
+					</div>
+					<div class='hero'>
+						<Hero title={entry.data.title} align='start'>
+							<div class='details'>
 								<h5>Applicable to:</h5>
-									<div class="tags">
-									{entry.data.tags.map((t) => <Pill>{t}</Pill>)}
-								</div>
+								{entry.data.tags.map((t) => <Pill>{t}</Pill>)}
 							</div>
-							
-						</div>
-						<div>
-							<h5>Description:</h5> 
-							<p class="description">{entry.data.description}</p>	
-						</div>
-						
-					</Hero>
-				</div>
-			</header>
-			<main class="wrapper">
-				<div class="stack gap-10 content">
-					{entry.data.img && <img src={entry.data.img} alt={entry.data.img_alt || ''} />}
-					<div class="content">
-						<Content />
+						</Hero>
+					</div>
+					<div class='description'>
+						<h5>Description:</h5>
+						<p>{entry.data.description}</p>
 					</div>
 				</div>
-			</main>
+			</header>
 		</div>
-		<ContactCTA titleForCTA = "Interested in working together?"/>
 	</div>
-</BaseLayout>
+	<main class='wrapper'>
+		<div class='stack gap-10 content'>
+			{
+				entry.data.img && (
+					<img src={entry.data.img} alt={entry.data.img_alt || ''} />
+				)
+			}
+			<div class='content'>
+				<Content />
+			</div>
+		</div>
+	</main>
 
+	<ContactCTA titleForCTA='Interested in working together?' />
+</BaseLayout>
 <style>
 	header {
 		padding-bottom: 2.5rem;
 		border-bottom: 1px solid var(--gray-800);
 	}
 
+	.back {
+		display: flex;
+		flex-direction: row;
+	}
+	a {
+		font-size: large;
+		font-weight: 600;
+	}
 	.back-link {
 		display: none;
 	}
 
+	.hero {
+		margin: 0 auto;
+		margin-top: 3rem;
+	}
+
 	.details {
 		display: flex;
-		flex-direction: column;
-		padding: 0.5rem;
-		gap: 1.5rem;
-		justify-content: space-between;
+		flex-direction: row;
+		justify-items: start;
 		align-items: center;
+		margin: 0 auto;
 	}
 
 	.tags {
 		display: flex;
+		flex-direction: row;
+		justify-items: center;
+		align-items: center;
 		gap: 0.5rem;
 	}
 
 	.description {
+		margin: 0 auto;
+
+		margin-top: 2rem;
 		font-size: var(--text-lg);
 		max-width: 54ch;
 	}
@@ -98,6 +116,7 @@ const { Content } = await entry.render();
 	.content {
 		max-width: 65ch;
 		margin-inline: auto;
+		font-size: large;
 	}
 
 	.content > :global(* + *) {
@@ -117,6 +136,7 @@ const { Content } = await entry.render();
 		box-shadow: var(--shadow-sm);
 		background: var(--gradient-subtle);
 		border: 1px solid var(--gray-800);
+		margin-top: 5rem;
 	}
 
 	.content :global(blockquote) {
@@ -151,7 +171,9 @@ const { Content } = await entry.render();
 
 		.details {
 			flex-direction: row;
-			gap: 2.5rem;
+			align-content: center;
+			gap: 1rem;
+			border: solid 2px red;
 		}
 
 		.content :global(blockquote) {
