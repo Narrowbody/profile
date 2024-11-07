@@ -39,13 +39,20 @@ const { Content } = await entry.render();
 						<Hero title={entry.data.title} align='start'>
 							<div class='details'>
 								<h5>Applicable to:</h5>
-								{entry.data.tags.map((t) => <Pill>{t}</Pill>)}
+								<div class='tags'>
+									{
+										entry.data.tags.map((t) => (
+											<Pill>{t}</Pill>
+										))
+									}
+								</div>
+							</div>
+
+							<div class='description'>
+								<h5>Description:</h5>
+								<p>{entry.data.description}</p>
 							</div>
 						</Hero>
-					</div>
-					<div class='description'>
-						<h5>Description:</h5>
-						<p>{entry.data.description}</p>
 					</div>
 				</div>
 			</header>
@@ -107,7 +114,6 @@ const { Content } = await entry.render();
 
 	.description {
 		margin: 0 auto;
-
 		margin-top: 2rem;
 		font-size: var(--text-lg);
 		max-width: 54ch;
@@ -170,10 +176,10 @@ const { Content } = await entry.render();
 		}
 
 		.details {
+			display: flex;
 			flex-direction: row;
-			align-content: center;
+			align-items: center;
 			gap: 1rem;
-			border: solid 2px red;
 		}
 
 		.content :global(blockquote) {

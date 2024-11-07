@@ -1,0 +1,21 @@
+---
+import { Picture } from 'astro:assets';
+import myImage from '../asset/levent-externado-zoomed.jpeg';
+---
+
+<Picture
+	src={myImage}
+	width={Math.round(myImage.width / 2)}
+	alt='Levent Erdem'
+	densities={[2]}
+	formats={['avif', 'webp']}
+	class='hero-image'
+/>
+
+<style>
+	.hero-image {
+		width: 480;
+		height: 620;
+		border-radius: 2rem;
+	}
+</style>

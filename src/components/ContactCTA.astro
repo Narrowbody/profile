@@ -7,16 +7,14 @@ interface Props {
 }
 
 const { titleForCTA } = Astro.props as Props;
-
 ---
 
 <aside>
-	
-	<h2>{ titleForCTA }</h2>
-	
-	<CallToAction href="mailto:me@example.com">
+	<h2>{titleForCTA}</h2>
+
+	<CallToAction href='mailto:info@leventerdem.net'>
 		Send Me a Message
-		<Icon icon="paper-plane-tilt" size="1.2em" />
+		<Icon icon='paper-plane-tilt' size='1.2em' />
 	</CallToAction>
 </aside>
 

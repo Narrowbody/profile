@@ -30,19 +30,68 @@ const { fullname, email, msg } = Astro.props; */
 		}
 	};
 </script> -->
-<h4>Contact Form</h4>
-<form id='contact-form' onsubmit='handleForm'>
-	<!-- To simplify the tutorial, the value is static. -->
-	<input type='hidden' name='contact_number' value='697483' />
-	<label>Full Name</label>
-	<input type='text' name='user_name' /><br /><br />
-	<label>Email</label>
-	<input type='email' name='user_email' /><br /><br />
-	<label>Message</label>
-	<textarea name='message'></textarea><br /><br />
-	<input type='submit' value='Send your message' />
-</form>
+<div class='container'>
+	<div class='contact'>
+		<h4>Contact me</h4>
+		<form id='contact-form' onsubmit='handleForm'>
+			<input type='hidden' name='contact_number' value='697483' />
+			<label for='fullname'>Full Name</label>
+			<input
+				type='text'
+				name='user_name'
+				name='fullname'
+				placeholder='full name'
+			/><br /><br />
+			<label for='email'>Email</label>
+			<input type='email' name='email' placeholder='your email' /><br
+			/><br />
+			<label for='msg'>Message</label>
+			<textarea name='msg' placeholder='how can I help you?'
+			></textarea><br /><br />
+			<input class='submit' type='submit' value='Send your message' />
+		</form>
+	</div>
+</div>
 
+<style>
+	.container {
+		margin: 0 auto;
+		width: 50%;
+		background: hsl(0, 0%, 59%);
+		border-radius: 2rem;
+	}
+	.contact {
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	.contact form {
+		display: flex;
+		flex-direction: column;
+		width: 50%;
+		height: 75%;
+	}
+	.contact h4 {
+		margin: 2rem;
+	}
+	form label {
+		font-size: large;
+	}
+	.submit {
+		background-color: hsl(0, 0%, 80%);
+		padding: 10px 20px;
+		border-radius: 2rem;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: large;
+		margin-bottom: 2rem;
+		cursor: pointer;
+	}
+	.submit:hover {
+		background-color: hsl(0, 0%, 90%);
+	}
+</style>
 <!-- <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" onsubmit="return false">
     <div class="mb-4">
       <label class="block text-gray-500 text-sm font-bold mb-2" for="fullname">

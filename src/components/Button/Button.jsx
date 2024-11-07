@@ -1,5 +1,3 @@
-import styles from './Button.module.css';
-
 function Button() {
 	function clickHandler() {
 		const btn = document.querySelector('#btn');
